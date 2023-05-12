@@ -6,11 +6,12 @@ import styles from "./ProductInfo.module.css";
 
 export default function ProductInfo() {
   return (
-      <div className={styles["info-container"]}>
-        <Reviews />
-        <Description />
-        <Details />
-        <Style />
-      </div>
+    <>
+      <Reviews />
+      <Description />
+      <Details />
+      <Style />
+    </>
   );
 }
+
