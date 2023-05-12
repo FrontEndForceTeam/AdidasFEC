@@ -1,0 +1,10 @@
+#mid-footer {
+  display: flex;
+  justify-content: space-around;
+}
+#mid-footer h5 {
+  margin-top: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
