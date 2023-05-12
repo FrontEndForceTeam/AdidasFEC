@@ -1,4 +1,7 @@
+#gallery {
+  display: flex;
+  flex-direction: row;
+}
 .gallery-container {
-    background-color: black;
-    margin: 5px;
+  margin: 5px;
 }
