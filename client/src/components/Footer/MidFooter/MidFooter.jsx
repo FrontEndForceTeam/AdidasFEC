@@ -1,6 +1,7 @@
+import styles from "./MidFooter.module.css";
 export default function MidFooter() {
   return (
-    <footer id="mid-footer">
+    <footer id={styles["mid-footer"]}>
       <ul className="footer-list">
         <h5>PRODUCTS</h5>
         <li className="footer-item">
