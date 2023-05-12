@@ -13,8 +13,8 @@ export default function TopFooter() {
         BACK TO TOP
       </button>
       <div id={styles["ctrl-container"]}>
-        <button>LOGIN</button>
-        <button>YOUR BAG (0)</button>
+        <button className={styles["ctrl-btn"]}>LOGIN</button>
+        <button className={styles["ctrl-btn"]}>YOUR BAG (0)</button>
       </div>
       <div id={styles["pre-footer"]}>
         <span id="member-message">BECOME A MEMBER & GET 10% OFF*</span>

@@ -37,3 +37,6 @@
   display: flex;
   flex-direction: column;
 }
+.ctrl-btn {
+  width: 50%;
+}
