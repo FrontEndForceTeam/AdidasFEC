@@ -1,2 +1,0 @@
-# AdidasFEC
-Front End Capstone
