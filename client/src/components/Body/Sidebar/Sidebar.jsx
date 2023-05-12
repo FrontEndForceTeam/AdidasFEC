@@ -1,18 +1,9 @@
-import react from "react";
-import index from "index.css";
+import styles from "./Sidebar.module.css";
 
-<div className="Container">
-  <div className="Description"></div>
-
-  <duv className="Customization"></duv>
-
-  <div className="Sizes"></div>
-
-  <div className="sizeGuide"></div>
-
-  <div className="addToBag"></div>
-
-  <div className="footer"></div>
-</div>;
-
-export default Sidebar.jsx;
+export default function Sidebar() {
+  return (
+    <div className={styles['sidebar-container']}> 
+     sidebar
+    </div>
+  );
+}
