@@ -1,0 +1,39 @@
+#pre-footer {
+  background-color: yellow;
+  padding: 40px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 32px;
+  text-transform: uppercase;
+  display: flex;
+}
+#pre-footer button {
+  background-color: black;
+  color: white;
+  border: none;
+  display: flex;
+  padding: 15px;
+}
+/* .phone {
+  display: hidden;
+} */
+#feedback {
+  background-color: #eceff1;
+}
+.feedback-text {
+  font-size: 18px;
+}
+.feedback-text h5 {
+  font-weight: 700;
+}
+#back-to-btn {
+  border: none;
+}
+#ctrl-container {
+  display: flex;
+}
+#footer-container {
+  display: flex;
+  flex-direction: column;
+}
