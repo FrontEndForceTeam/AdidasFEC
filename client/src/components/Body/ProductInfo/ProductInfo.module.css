@@ -1,0 +1,6 @@
+.info-container{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
