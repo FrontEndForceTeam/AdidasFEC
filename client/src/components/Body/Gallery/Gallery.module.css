@@ -1,4 +1,8 @@
 .gallery-container {
     background-color: black;
+    width: 500px;
+    height: 500px;
     margin: 5px;
+    color: red;
+    font-size: 2rem;
 }
