@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'AdihausDIN-CondMediIta';
+  src: url('./fonts/AdihausDIN-CondMediIta.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'adihausregular';
+  src: url('./fonts/adihausregular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'adihausbold';
+  src: url('./fonts/adihausbold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'AdihausDIN-CondBoldItalic';
+  src: url('./fonts/AdihausDIN-CondBoldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'AdihausDIN-CondIta';
+  src: url('./fonts/AdihausDIN-CondIta.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+}
+
+:root {
+  --font-family-adihaus-cond-medi-ita: 'AdihausDIN-CondMediIta', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-adihaus-regular: 'adihausregular', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-adihaus-bold: 'adihausbold', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-adihaus-cond-bold-italic: 'AdihausDIN-CondBoldItalic', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-adihaus-cond-ita: 'AdihausDIN-CondIta', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
