@@ -1,3 +1,3 @@
 export default function Header() {
-  return <>BoHeaderdy</>;
+  return <>Header</>;
 }
