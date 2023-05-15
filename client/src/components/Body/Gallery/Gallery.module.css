@@ -1,7 +1,23 @@
 #gallery {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid red;
 }
 .gallery-container {
   margin: 5px;
+  border: 1px solid blue;
+}
+#gallery button {
+  border: 1px solid black;
+  z-index: 1;
+  height: 50px;
+  letter-spacing: 2px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: white;
+  align-self: center;
+}
+#gallery button:hover {
+  color: rgba(0, 0, 0, 0.5);
 }
