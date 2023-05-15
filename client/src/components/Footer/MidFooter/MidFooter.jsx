@@ -177,16 +177,16 @@ export default function MidFooter() {
           <img alt="Insta" href="https://www.instagram.com/adidas/"></img>
         </li>
         <li className={styles["footer-item"]}>
-          <img src="Twitter" href="https://twitter.com/adidas"></img>
+          <img alt="Twitter" href="https://twitter.com/adidas"></img>
         </li>
         <li className={styles["footer-item"]}>
-          <img src="Pinterest" href="https://www.pinterest.de/adidas/"></img>
+          <img alt="Pinterest" href="https://www.pinterest.de/adidas/"></img>
         </li>
         <li className={styles["footer-item"]}>
-          <img src="Tiktok" href="https://www.tiktok.com/@adidas?lang=en"></img>
+          <img alt="Tiktok" href="https://www.tiktok.com/@adidas?lang=en"></img>
         </li>
         <li className={styles["footer-item"]}>
-          <img src="Youtube" href="https://www.youtube.com/c/adidas"></img>
+          <img alt="Youtube" href="https://www.youtube.com/c/adidas"></img>
         </li>
       </ul>
     </footer>
