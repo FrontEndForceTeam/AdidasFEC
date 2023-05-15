@@ -2,22 +2,32 @@ import { useState } from "react";
 import styles from "./Gallery.module.css";
 
 export default function Gallery() {
-  const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const testArray = [
+    { num: 1, type: "image" },
+    { num: 2, type: "video" },
+    { num: 3, type: "image" },
+    { num: 4, type: "image" },
+    { num: 5, type: "image" },
+    { num: 6, type: "image" },
+    { num: 7, type: "image" },
+    { num: 8, type: "image" },
+    { num: 9, type: "image" },
+  ];
   const [showBtn, setShowBtn] = useState("Show More");
   return (
     <div id={styles["gallery"]}>
       {testArray.map((image, index) => {
         if (image.type == "video") {
-          return <ProductVideo url={image.url} />;
+          return <ProductVideo video={image.num} />;
         } else if (index == 4) {
           return (
             <>
               <ShowMoreButton show={showBtn} />
-              <ProductImage image={image} />
+              <ProductImage image={image.num} />
             </>
           );
         }
-        return <ProductImage image={image} />;
+        return <ProductImage image={image.num} />;
       })}
     </div>
   );
@@ -26,7 +36,7 @@ export default function Gallery() {
 function ProductImage(props) {
   return (
     <div className={styles["gallery-container"]}>
-      {props.image}
+      {`image-${props.image}`}
       <img className={styles["image"]}></img>
     </div>
   );
@@ -34,11 +44,12 @@ function ProductImage(props) {
 
 function ProductVideo(props) {
   return (
-    <div>
+    <div className={styles["gallery-container"]}>
       <video
         loop=""
+        alt={props.video}
         playsInline=""
-        src={props.url}
+        src=""
         onClick={(e) => {
           pauseVideo(e);
         }}
@@ -50,10 +61,12 @@ function ProductVideo(props) {
 
 function ShowMoreButton(props) {
   return (
-    <button>
-      <span>{props.show}</span>
-      <img alt="[arrow icon]"></img>
-    </button>
+    <div id={styles["btn-container"]}>
+      <button>
+        <span>{props.show}</span>
+        <img alt="[arrow icon]"></img>
+      </button>
+    </div>
   );
 }
 
