@@ -1,10 +1,75 @@
 .sidebar-container {
-    background-color: black;
-    width: 500px;
-    height: 100vh;
-    color: red;
+    background-color: white;
+    /* width: 320px;
+    height: 4070.620px; */
+    color: black;
     font-size: 2rem;
-    position: fixed;
+    /* box-sizing: border-box; */
     display: flex;
+    flex: 0 0 430px;
+    max-width: 430px;
     transform: translateX(625px);
+    padding :  30px;
+    font-family: AdihausDIN-Condia, Arial, Helvetica, sans-serif;
+    flex-basis: 320px;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 16px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+.sidebar-description{
+    margin-bottom: 0;
+    display: flex;
+    /* flex-flow: row;
+    flex-wrap: wrap; */
+   
+    
+}
+.preHeader {
+    width : 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 24px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.reviewCount {
+    display: flex;
+}
+.productTitle {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.price {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .price::before {
+    content: '\00a3';
+  }
+
+.colorName {
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 1280px) {
+    .sidebar-container {
+        flex: 0 0 430px;
+        max-width: 430px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .sidebar-container {
+        display: block;
+    }
 }
