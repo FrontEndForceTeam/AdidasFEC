@@ -1,4 +1,8 @@
 .carousel-container {
     background-color: black;
+    width: 500px;
+    height: 250px;
+    color: red;
+    font-size: 2rem;
     margin: 5px;
 }
