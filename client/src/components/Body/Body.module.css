@@ -1,4 +1,26 @@
-.body-container{
-    background-color: gray;
-    display: flex;
+#body-container {
+  background-color: gray;
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
 }
+#main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+#sidebar-container {
+  width: 520px;
+  position: sticky;
+}
+/* @media screen and (min-width: 960px) {
+  .body-container {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1280x) {
+  .body-container {
+    display: flex;
+  }
+} */

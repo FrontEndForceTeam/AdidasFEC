@@ -1,4 +1,36 @@
-.gallery-container {
-    background-color: black;
-    margin: 5px;
+#gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 1px solid red;
 }
+.gallery-container {
+  margin: 5px;
+  border: 1px solid blue;
+  margin: 0%;
+  /* media query to remove this */
+  width: calc(100% / 2);
+  /* for formatting */
+  height: 30px;
+}
+#btn-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#btn-container button {
+  border: 1px solid black;
+  z-index: 1;
+  height: 50px;
+  letter-spacing: 2px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: white;
+  /* margin: 0% 30% 0%; */
+}
+#gallery button:hover {
+  color: rgba(0, 0, 0, 0.5);
+  /* justify-self: center; */
+}
+

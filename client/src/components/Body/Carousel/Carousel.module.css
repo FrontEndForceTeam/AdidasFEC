@@ -1,4 +1,27 @@
 .carousel-container {
-    background-color: black;
-    margin: 5px;
+  background-color: white;
+  width: 500px;
+  height: 250px;
+  display: flex;
+  overflow-x: scroll;
+  color: black;
+  font-size: 2rem;
+  margin: 5px;
+}
+.carousel-container p {
+  text-align: center;
+}
+.carousel-item {
+  border: 1px solid red;
+  margin: 3px;
+  width: 208px;
+}
+.carousel-item p {
+  width: 22px;
+  height: 22px;
+  background-color: aqua;
+  margin: 3px;
+}
+.price {
+  bottom: 30px;
 }

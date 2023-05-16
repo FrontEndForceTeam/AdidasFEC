@@ -1,0 +1,11 @@
+.product-info-container{
+    background-color: white;
+    width: 900px;
+    height: 1000px;
+    color: black;
+    font-size: 2rem;
+    margin: 5px;
+    border: solid green 2px;
+    display: flex;
+    flex-direction: column;
+}

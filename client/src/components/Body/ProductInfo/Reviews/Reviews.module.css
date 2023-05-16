@@ -1,0 +1,32 @@
+.reviews-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #eceff1;
+}
+
+.user-reviews-container {
+  display: flex;
+  width: 600px;
+}
+
+.item-overview-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.toggle-btn {
+  width: 100%;
+  text-align: left;
+  padding: 30px 15px;
+  border: none;
+  background: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: large;
+}
+
+.overall {
+    border-top: 2px solid #eceff1;
+}
