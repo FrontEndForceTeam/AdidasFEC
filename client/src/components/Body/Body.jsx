@@ -6,13 +6,17 @@ import styles from "./Body.module.css";
 
 export default function Body() {
   return (
-    <div className={styles["body-container"]}>
-      <Gallery />
-      <Sidebar />
-      <Carousel />
-      <ProductInfo />
-      <Carousel />
-      <Carousel />
+    <div id={styles["body-container"]}>
+      <div id={styles["main"]}>
+        <Gallery />
+        <Carousel />
+        <ProductInfo />
+        <Carousel />
+        <Carousel />
+      </div>
+      <div id={styles["sidebar-container"]}>
+        <Sidebar />
+      </div>
     </div>
   );
 }
