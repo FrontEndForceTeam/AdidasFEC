@@ -5,3 +5,15 @@
   display: flex;
   flex-direction: column;
 }
+
+@media screen and (min-width: 960px) {
+  .body-container {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1280x) {
+  .body-container {
+    display: flex;
+  }
+}
