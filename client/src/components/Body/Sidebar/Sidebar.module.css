@@ -22,6 +22,8 @@
 }
 
 .sidebar-description{
+    font: "AdihausDIN-Condia";
+    width:  100%;
     margin-bottom: 0;
     display: flex;
     /* flex-flow: row;
@@ -43,16 +45,41 @@
 .reviewCount {
     display: flex;
 }
+
+button{
+    background-color: white;
+    border: none;
+    font-weight: bold;
+}
 .productTitle {
     font-size: 30px;
     margin-top: 10px;
 }
 
-.price {
-    width: 100%;
+.priceWrapper{
     margin-top: 10px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+}
+
+.price {
+  
+  margin-right: 5px;
+  
+}
+
+.discountPrice {
+   
+    color: red;
   }
   
+  .discountPrice::before {
+    content: '\00a3';
+  }
+
+
   .price::before {
     content: '\00a3';
   }
