@@ -41,7 +41,10 @@ export default function Carousel(props) {
         {testData.map((image) => {
           return (
             <SwiperSlide className="test">
-              <div className={styles["product-card"]}>{image.img}</div>
+              <CarouselElement
+                className={styles["product-card"]}
+                image={image.img}
+              />
             </SwiperSlide>
           );
         })}
@@ -82,16 +85,13 @@ export default function Carousel(props) {
 
 function CarouselElement(props) {
   return (
-    <div className={styles["carousel-item"]}>
-      <div
-        className={styles["card-top"]}
-        style={{ backgroundImage: props.image }}
-      >
+    <div className={styles["product-card"]}>
+      <div className={styles["card-top"]}>
         <p className={styles["price"]}>$10</p>
       </div>
       <div className={styles["card-bottom"]}>
-        <h5>title</h5>
-        <p>description</p>
+        <h1>Cyka Blyat</h1>
+        <p className={styles["card-desc"]}>Originals</p>
       </div>
     </div>
   );
