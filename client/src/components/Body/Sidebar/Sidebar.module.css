@@ -65,23 +65,25 @@ button{
 }
 
 .price {
-  
+  color: darkgray;
   margin-right: 5px;
   
 }
 
 .discountPrice {
-   
     color: red;
+    font-weight: bold;
   }
   
   .discountPrice::before {
     content: '\00a3';
   }
+  
 
 
   .price::before {
     content: '\00a3';
+    text-decoration: line-through;
   }
 
 .colorName {
@@ -99,4 +101,16 @@ button{
     .sidebar-container {
         display: block;
     }
+}
+
+.sideBarEmbellishments {
+    margin-top: 40px;
+    line-height: 22px;
+    font-style: normal;
+}
+
+span { font-weight: bold;}
+
+.embellishDescription {
+    margin-top: 10px;
 }
