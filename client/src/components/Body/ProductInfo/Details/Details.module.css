@@ -1,10 +1,25 @@
 .details-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2px solid #eceff1;
+  font-size: 50%;
+  justify-content: space-between;
+  padding: 25px 50px;
 }
 
-.details-list {
-    display: flex;
-    flex-direction: row;
+.toggle-btn {
+  width: 100%;
+  text-align: left;
+  padding: 30px 15px;
+  border: none;
+  background: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: large;
+}
+
+.list-items {
+  margin: 10px;
 }

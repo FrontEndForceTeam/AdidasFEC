@@ -1,0 +1,15 @@
+.toggle-btn {
+    width: 100%;
+    text-align: left;
+    padding: 30px 15px;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: large;
+  }
+
+  .style-container {
+        border-bottom: 2px solid #eceff1;
+  }
