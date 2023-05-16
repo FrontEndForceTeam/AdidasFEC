@@ -4,8 +4,11 @@ import styles from "./Reviews.module.css";
 
 export default function Reviews() {
   return (
-    <div>
-      <button className={styles["toggle-btn"]}>Review</button>
+    <div className={styles['overall']}>
+      <button className={styles["toggle-btn"]}>
+        <div>Reviews (434)</div>
+        <div>4.7</div>
+        </button>
       <div className={styles["reviews-container"]}>
         <div className={styles["item-overview-container"]}>
           <ItemOverview />
