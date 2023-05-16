@@ -1,8 +1,21 @@
+.carousel-block {
+  width: calc(100vw - 520px);
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+.carousel-block h2 {
+  font-size: 4em;
+  font-weight: 900;
+}
 .carousel-container {
   background-color: white;
-  width: 500px;
-  height: 250px;
   display: flex;
+  align-self: center;
+  width: 95%;
   overflow-x: scroll;
   color: black;
   font-size: 2rem;
@@ -12,15 +25,28 @@
   text-align: center;
 }
 .carousel-item {
+  flex-shrink: 0;
   border: 1px solid red;
   margin: 3px;
   width: 208px;
+  height: 289px;
+  display: flex;
+  flex-direction: column;
 }
 .carousel-item p {
   width: 22px;
   height: 22px;
   background-color: aqua;
   margin: 3px;
+}
+.card-top {
+  background-color: gray;
+  flex-grow: 1;
+}
+.card-bottom {
+  color: black;
+  background-color: white;
+  height: 25%;
 }
 .price {
   bottom: 30px;
