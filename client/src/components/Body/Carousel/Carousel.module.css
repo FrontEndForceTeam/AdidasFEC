@@ -1,5 +1,7 @@
-.carousel-block {
-  width: calc(100vw - 520px);
+.swiper {
+  /* width: calc(100vw - 720px); */
+  width: 80rem;
+  height: 280px;
   display: flex;
   flex-direction: column;
   margin: 15px;
@@ -7,47 +9,48 @@
   display: flex;
   justify-content: center;
 }
-.carousel-block h2 {
-  font-size: 4em;
-  font-weight: 900;
-}
-.carousel-container {
-  background-color: white;
-  display: flex;
-  align-self: center;
-  width: 95%;
-  overflow-x: scroll;
-  color: black;
-  font-size: 2rem;
-  margin: 5px;
-}
-.carousel-container p {
-  text-align: center;
-}
-.carousel-item {
-  flex-shrink: 0;
-  border: 1px solid red;
-  margin: 3px;
-  width: 208px;
-  height: 289px;
+
+.swiper-slide {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-.carousel-item p {
-  width: 22px;
-  height: 22px;
-  background-color: aqua;
-  margin: 3px;
+.product-card {
+  border: 1px solid green;
+  height: 100%;
+  width: 100%;
 }
-.card-top {
-  background-color: gray;
-  flex-grow: 1;
+.next {
+  background-color: antiquewhite;
 }
-.card-bottom {
-  color: black;
+.prev {
+  background-color: black;
+}
+
+.carousel-btn-prev,
+.carousel-btn-next {
   background-color: white;
-  height: 25%;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+  transform: translate(-590px, -230px);
+  /* position: fixed; */
 }
-.price {
-  bottom: 30px;
+
+.carousel-btn-next {
+  transform: translate(590px, -175px);
+}
+
+.carousel-btn-prev:hover,
+.carousel-btn-next:hover {
+  transition: 0.4s ease-in-out;
+  opacity: 1;
 }
