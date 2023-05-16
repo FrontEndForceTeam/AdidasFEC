@@ -7,10 +7,10 @@ import styles from "./ProductInfo.module.css";
 export default function ProductInfo() {
   return (
     <div className={styles['product-info-container']}>
-      <Reviews />
-      <Description />
-      <Details />
-      <Style />
+      <div className={styles["reviews-container"]}><Reviews /></div>
+      <div><Description /></div>
+      <div><Details /></div>
+      <div><Style /></div>
     </div>
   );
 }

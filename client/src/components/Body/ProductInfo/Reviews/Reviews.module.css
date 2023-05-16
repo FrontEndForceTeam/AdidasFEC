@@ -1,0 +1,21 @@
+.reviews-container {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #eceff1;
+}
+
+.user-reviews-container {
+    display: flex;
+    width: 600px;
+}
+
+.item-overview-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.toggle-btn {
+    width: 100%;
+    text-align: left;
+}

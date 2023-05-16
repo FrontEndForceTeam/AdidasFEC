@@ -1,0 +1,23 @@
+.description-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid #eceff1;
+}
+
+.description {
+    font-size: 60%;
+    width: 50%;
+    margin: 5px;
+}
+
+.image {
+    width: 50%;
+    text-align: center;
+}
+
+.toggle-btn {
+    width: 100%;
+    text-align: left;
+}
+
