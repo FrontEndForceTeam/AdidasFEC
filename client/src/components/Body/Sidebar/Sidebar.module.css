@@ -1,116 +1,111 @@
 .sidebar-container {
-    background-color: white;
-    /* width: 320px;
+  background-color: white;
+  /* width: 320px;
     height: 4070.620px; */
-    color: black;
-    font-size: 2rem;
-    /* box-sizing: border-box; */
-    display: flex;
-    flex: 0 0 430px;
-    max-width: 430px;
-    transform: translateX(625px);
-    padding :  30px;
-    font-family: AdihausDIN-Condia, Arial, Helvetica, sans-serif;
-    flex-basis: 320px;
-    flex-direction: column;
-    flex-grow: 0;
-    flex-shrink: 0;
-    font-size: 16px;
-    position: relative;
-    -webkit-font-smoothing: antialiased;
-
+  color: black;
+  font-size: 2rem;
+  /* box-sizing: border-box; */
+  display: flex;
+  flex: 0 0 430px;
+  max-width: 430px;
+  transform: translateX(625px);
+  padding: 30px;
+  font-family: AdihausDIN-Condia, Arial, Helvetica, sans-serif;
+  flex-basis: 320px;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 16px;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
 }
 
-.sidebar-description{
-    font: "AdihausDIN-Condia";
-    width:  100%;
-    margin-bottom: 0;
-    display: flex;
-    /* flex-flow: row;
+.sidebar-description {
+  font: "AdihausDIN-Condia";
+  width: 100%;
+  margin-bottom: 0;
+  display: flex;
+  /* flex-flow: row;
     flex-wrap: wrap; */
-   
-    
 }
 .preHeader {
-    width : 100%;
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 24px;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    font-size: 16px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 24px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 .reviewCount {
-    display: flex;
+  display: flex;
 }
 
-button{
-    background-color: white;
-    border: none;
-    font-weight: bold;
+button {
+  background-color: white;
+  border: none;
+  font-weight: bold;
 }
 .productTitle {
-    font-size: 30px;
-    margin-top: 10px;
+  font-size: 30px;
+  margin-top: 10px;
 }
 
-.priceWrapper{
-    margin-top: 10px;
-    display: flex;
-    width: 100%;
-    align-items: center;
-
+.priceWrapper {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  align-items: center;
 }
 
 .price {
   color: darkgray;
   margin-right: 5px;
-  
 }
 
 .discountPrice {
-    color: red;
-    font-weight: bold;
-  }
-  
-  .discountPrice::before {
-    content: '\00a3';
-  }
-  
+  color: red;
+  font-weight: bold;
+}
 
+.discountPrice::before {
+  content: "\00a3";
+}
 
-  .price::before {
-    content: '\00a3';
-    text-decoration: line-through;
-  }
+.price::before {
+  content: "\00a3";
+  text-decoration: line-through;
+}
 
 .colorName {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 1280px) {
-    .sidebar-container {
-        flex: 0 0 430px;
-        max-width: 430px;
-    }
+  .sidebar-container {
+    flex: 0 0 430px;
+    max-width: 430px;
+  }
 }
 
 @media screen and (min-width: 960px) {
-    .sidebar-container {
-        display: block;
-    }
+  .sidebar-container {
+    display: block;
+  }
 }
 
 .sideBarEmbellishments {
-    margin-top: 40px;
-    line-height: 22px;
-    font-style: normal;
+  margin-top: 40px;
+  line-height: 22px;
+  font-style: normal;
 }
 
-span { font-weight: bold;}
+span {
+  font-weight: bold;
+}
 
 .embellishDescription {
-    margin-top: 10px;
+  margin-top: 10px;
 }

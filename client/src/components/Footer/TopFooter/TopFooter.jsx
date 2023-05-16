@@ -17,11 +17,13 @@ export default function TopFooter() {
         <button className={styles["ctrl-btn"]}>YOUR BAG (0)</button>
       </div>
       <div id={styles["pre-footer"]}>
-        <span id="member-message">BECOME A MEMBER & GET 10% OFF*</span>
-        <button id="sign-up btn">
+        <span id={styles["member-message"]}>
+          BECOME A MEMBER & GET 10% OFF*
+        </span>
+        <button id={styles["sign-up-btn"]}>
           <span>SIGN UP FOR FREE</span>
-          <div id="img-container">
-            <img id="arrow"></img>
+          <div id={styles["img-container"]}>
+            <img id={styles["arrow"]}></img>
           </div>
         </button>
       </div>
