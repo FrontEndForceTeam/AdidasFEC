@@ -6,11 +6,11 @@ import styles from "./ItemOverview.module.css";
 
 export default function ItemOverview() {
   return (
-    <>
-        <OverallReview/>
-        <Sizing/>
-        <Filter/>
-        <StarRating/>
-    </>
-  )
+    <div>
+      <div><OverallReview /></div>
+      <div><Sizing /></div>
+      <div><Filter /></div>
+      <div><StarRating /></div>
+    </div>
+  );
 }

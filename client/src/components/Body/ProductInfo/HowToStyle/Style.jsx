@@ -1,5 +1,5 @@
 import styles from "./Style.module.css"
 
 export default function Style() {
-    return <>Style</>
+    return <>How to style</>
 }

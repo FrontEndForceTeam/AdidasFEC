@@ -1,0 +1,10 @@
+.details-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.details-list {
+    display: flex;
+    flex-direction: row;
+}
