@@ -1,23 +1,18 @@
 .sidebar-container {
   background-color: white;
-  /* width: 320px;
-    height: 4070.620px; */
+  height: 100vh;
   color: black;
   font-size: 2rem;
   /* box-sizing: border-box; */
   display: flex;
-  flex: 0 0 430px;
-  max-width: 430px;
-  transform: translateX(1000px);
+  /* flex: 0 0 430px; */
+  flex-grow: 1;
   padding: 30px;
   font-family: AdihausDIN-Condia, Arial, Helvetica, sans-serif;
-  flex-basis: 320px;
   flex-direction: column;
-  flex-grow: 0;
-  flex-shrink: 0;
   font-size: 16px;
-  position: relative;
-  -webkit-font-smoothing: antialiased;
+  /* position: relative; */
+  /* -webkit-font-smoothing: antialiased; */
 }
 
 .sidebar-description {
@@ -86,7 +81,7 @@ button {
 @media screen and (min-width: 1280px) {
   .sidebar-container {
     flex: 0 0 430px;
-    max-width: 430px;
+    /* max-width: 430px; */
   }
 }
 
