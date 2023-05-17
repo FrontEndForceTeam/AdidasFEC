@@ -2,7 +2,7 @@
   background-color: white;
   height: 100vh;
   color: black;
-  font-size: 2rem;
+
   /* box-sizing: border-box; */
   display: flex;
   /* flex: 0 0 430px; */
@@ -24,7 +24,6 @@
     flex-wrap: wrap; */
 }
 .preHeader {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   min-height: 24px;
@@ -34,8 +33,11 @@
   font-size: 16px;
 }
 
+
+
 .reviewCount {
   display: flex;
+  font-weight: bold;
 }
 
 button {
@@ -46,6 +48,7 @@ button {
 .productTitle {
   font-size: 30px;
   margin-top: 10px;
+  font-weight: bold;
 }
 
 .priceWrapper {
@@ -97,10 +100,64 @@ button {
   font-style: normal;
 }
 
-span {
+ .heading {
   font-weight: bold;
-}
+} 
 
 .embellishDescription {
   margin-top: 10px;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#leftShoeText {
+  text-transform: uppercase;
+}
+
+#rightShoeText {
+  text-transform: uppercase;
+}
+
+.input_label {
+  color: #767677;
+  left: 15px;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(0-50%);
+}
+
+.inputBox {
+  height: 45px;
+}
+
+.inputBoxContainer {
+  position: relative;
+}
+
+
+
+.inputCount {
+  margin-left: 10px;
+}
+
+.summary {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.embellishPrice {
+  font-weight: bold;
+}
+
+.clearButton {
+  text-decoration: underline;
+  margin-left: 150px;;
 }
