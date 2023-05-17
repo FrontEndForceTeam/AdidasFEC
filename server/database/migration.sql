@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS size;
 DROP TABLE IF EXISTS image;
 DROP TABLE IF EXISTS how_to_style;
 DROP TABLE IF EXISTS review;
+DROP TABLE IF EXISTS product CASCADE;
 
-CREATE TABLE Product (
-    id INT PRIMARY KEY,
+CREATE TABLE product (
+    id SERIAL PRIMARY KEY,
     rating FLOAT,
     type VARCHAR(255),
     price FLOAT,
@@ -17,24 +17,22 @@ CREATE TABLE Product (
     preview_image TEXT
 );
 
-CREATE TABLE Size (
-    id INT PRIMARY KEY,
+CREATE TABLE size (
     product_id INT,
     size INT,
     stock INT,
     FOREIGN KEY (product_id) REFERENCES Product (id)
 );
 
-CREATE TABLE Image (
-    id INT PRIMARY KEY,
+CREATE TABLE image (
     product_id INT,
     image_url TEXT,
     element VARCHAR(255),
+    i int,
     FOREIGN KEY (product_id) REFERENCES Product (id)
 );
 
-CREATE TABLE HowToStyle (
-    id INT PRIMARY KEY,
+CREATE TABLE howToStyle (
     product_id INT,
     image_url TEXT,
     user_name VARCHAR(255),
@@ -42,8 +40,7 @@ CREATE TABLE HowToStyle (
     FOREIGN KEY (product_id) REFERENCES Product (id)
 );
 
-CREATE TABLE Review (
-    id INT PRIMARY KEY,
+CREATE TABLE review (
     product_id INT,
     stars INT,
     account VARCHAR(255),
