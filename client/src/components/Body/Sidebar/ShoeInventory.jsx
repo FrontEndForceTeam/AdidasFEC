@@ -1,6 +1,7 @@
 import React from 'react';
+import styles from "./Sidebar.module.css";
 
-class ShoeSizeButtons extends React.Component {
+class ShoeInventory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,11 +11,13 @@ class ShoeSizeButtons extends React.Component {
 
   componentDidMount() {
     // Fetch sizes and quantities from the server
-    fetch('/api/shoe_inventory')
+    fetch('http://localhost:3010/api/shoe_inventory')
       .then(response => response.json())
       .then(data => {
         this.setState({ sizes: data });
+        console.log(data);
       })
+
       .catch(error => console.log(error));
   }
 
@@ -52,7 +55,11 @@ class ShoeSizeButtons extends React.Component {
       }
     });
 
-    return <div>{rows}</div>;
+    return (
+      <div>
+        <div>{rows}</div>
+      </div>
+    )
   }
 }
 

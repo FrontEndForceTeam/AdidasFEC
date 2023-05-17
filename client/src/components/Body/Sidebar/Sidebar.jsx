@@ -1,6 +1,6 @@
 import styles from "./Sidebar.module.css";
 import React, { useState } from "react";
-import ShoeSizes from './ShoeSizes';
+import ShoeInventory from './ShoeInventory';
 
 export default function Sidebar() {
   const [leftFootText, setLeftFootText] = useState("");
@@ -150,7 +150,9 @@ export default function Sidebar() {
   </div>
 
 </div>
-<BuySection/>
+<div>
+  <ShoeInventory/>
+</div>
  </div>
 
   );

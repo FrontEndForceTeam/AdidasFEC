@@ -1,5 +1,5 @@
 -- MIGRATION FILE
-DROP TABLE shoe_inventory;
+DROP TABLE  if exists shoe_inventory CASCADE;
 
 CREATE TABLE shoe_inventory (
   size DECIMAL(3, 1),
