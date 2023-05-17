@@ -32,7 +32,7 @@ CREATE TABLE image (
     FOREIGN KEY (product_id) REFERENCES Product (id)
 );
 
-CREATE TABLE howToStyle (
+CREATE TABLE how_to_style (
     product_id INT,
     image_url TEXT,
     user_name VARCHAR(255),
