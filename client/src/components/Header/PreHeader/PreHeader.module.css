@@ -26,6 +26,7 @@
   animation: fadeIn 2.5s infinite alternate;
 }
 
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
