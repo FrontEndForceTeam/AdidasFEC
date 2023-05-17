@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Gallery.module.css";
 
+let apiURL = "http://127.0.0.1:3500/gallery/1";
+
 export default function Gallery() {
+  const [galleryArray, setGalleryArray] = useState(null);
+  const [showBtn, setShowBtn] = useState("Show More");
   const testArray = [
     { num: 1, type: "image" },
     { num: 2, type: "video" },
@@ -13,31 +17,43 @@ export default function Gallery() {
     { num: 8, type: "image" },
     { num: 9, type: "image" },
   ];
-  const [showBtn, setShowBtn] = useState("Show More");
+
+  useEffect(() => {
+    const getAPI = async () => {
+      let response = await fetch(apiURL);
+      let data = await response.json();
+      setGalleryArray(data);
+    };
+    getAPI();
+  }, []);
+  console.log(galleryArray);
+
   return (
-    <div id={styles["gallery"]}>
-      {testArray.map((image, index) => {
-        if (image.type == "video") {
-          return <ProductVideo video={image.num} />;
-        } else if (index == 4) {
-          return (
-            <>
-              <ShowMoreButton show={showBtn} />
-              <ProductImage image={image.num} />
-            </>
-          );
-        }
-        return <ProductImage image={image.num} />;
-      })}
-    </div>
+    galleryArray && (
+      <div id={styles["gallery"]}>
+        {galleryArray.map((image, index) => {
+          if (image.i == 2) {
+            return <ProductVideo video={image.image_url} />;
+          } else if (index == 4) {
+            return (
+              <>
+                <ShowMoreButton show={showBtn} />
+                <ProductImage index={image.i} url={image.image_url} />
+              </>
+            );
+          }
+          return <ProductImage index={image.i} url={image.image_url} />;
+        })}
+      </div>
+    )
   );
 }
 
 function ProductImage(props) {
+  console.log(props.url);
   return (
     <div className={styles["gallery-container"]}>
-      {`image-${props.image}`}
-      <img className={styles["image"]}></img>
+      <img className={styles["image"]} src={props.url}></img>
     </div>
   );
 }
@@ -46,10 +62,11 @@ function ProductVideo(props) {
   return (
     <div className={styles["gallery-container"]}>
       <video
-        loop=""
-        alt={props.video}
+        autoPlay
+        loop
+        alt="video"
         playsInline=""
-        src=""
+        src={props.video}
         onClick={(e) => {
           pauseVideo(e);
         }}
