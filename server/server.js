@@ -56,7 +56,7 @@ app.get("/gallery/:id", async (req, res) => {
   }
 });
 
-app.get("/review/:id", async (req, res) => {
+app.get("/productinfo/:id", async (req, res) => {
   try {
     let response = await client.query(
       `
