@@ -1,5 +1,12 @@
-import styles from "./Style.module.css"
+import styles from "./Style.module.css";
 
 export default function Style() {
-    return <>How to style</>
+  return (
+    <div>
+      <button className={styles["toggle-btn"]}>How to style</button>
+      <div className={styles['style-container']}>
+
+      </div>
+    </div>
+  );
 }
