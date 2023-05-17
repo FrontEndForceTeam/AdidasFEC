@@ -127,3 +127,23 @@ VALUES
 (1,'https://photorankmedia-a.akamaihd.net/media/6/w/h/6whad55/normal.jpg','jeet_wadke09'),
 (1,'https://z1photorankmedia-a.akamaihd.net/media/v/4/h/v4hni55/normal.jpg','cristian.lazzarini'),
 (1,'https://photorankmedia-a.akamaihd.net/media/t/c/3/tc3tb65/normal.jpg','corrado');
+
+INSERT INTO review
+(product_id, stars, account, likes, title, body, satisfaction, comfort, color,appearance, quality)
+VALUES 
+    (1, 5, 'user1', 5, 'Excellent product', 'Lorem ipsum dolor sit amet.', true, false, false, false, false),
+    (1, 4, 'user2', 5, 'Great value for money', 'Lorem ipsum dolor sit amet.', true, false, false, false, false),
+    (1, 5, 'user3', 5, 'Highly recommended', 'Lorem ipsum dolor sit amet.', false, true, false, false, false),
+    (1, 4, 'user4', 5, 'Good features', 'Lorem ipsum dolor sit amet.', false, true, false, false, false),
+    (1, 5, 'user5', 4, 'Impressive performance', 'Lorem ipsum dolor sit amet.', false, false, false, true, true),
+    (1, 5, 'user6', 5, 'Sleek design', 'Lorem ipsum dolor sit amet.', true, true, true, true, false),
+    (1, 4, 'user7', 4, 'Solid build quality', 'Lorem ipsum dolor sit amet.', true, true, true, true, true),
+    (1, 5, 'user8', 5, 'Love it!', 'Lorem ipsum dolor sit amet.', false, false, false, false, true),
+    (1, 4, 'user9', 5, 'Good value for money', 'Lorem ipsum dolor sit amet.', true, false, true, true, true),
+    (1, 5, 'user10', 5, 'Excellent purchase', 'Lorem ipsum dolor sit amet.', true, true, false, true, true),
+    (1, 5, 'user11', 4, 'Great product', 'Lorem ipsum dolor sit amet.', true, false, true, true, false),
+    (1, 5, 'user12', 5, 'Fantastic quality', 'Lorem ipsum dolor sit amet.', true, false, true, true, false),
+    (1, 4, 'user13', 5, 'Good overall performance', 'Lorem ipsum dolor sit amet.', false, true, true, true, true),
+    (1, 5, 'user14', 5, 'Great user experience', 'Lorem ipsum dolor sit amet.', true, true, false, true, true),
+    (1, 4, 'user15', 4, 'Solid purchase', 'Lorem ipsum dolor sit amet.', true, true, true, true, false);
+

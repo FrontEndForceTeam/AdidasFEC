@@ -46,11 +46,11 @@ CREATE TABLE review (
     image_url TEXT,
     likes INT,
     title VARCHAR(255),
-    description TEXT,
-    satisfaction BOOL,
-    comfort BOOL,
-    color BOOL,
-    appearance BOOL,
-    quality BOOL,
+    body TEXT,
+    satisfaction BOOLEAN,
+    comfort BOOLEAN,
+    color BOOLEAN,
+    appearance BOOLEAN,
+    quality BOOLEAN,
     FOREIGN KEY (product_id) REFERENCES Product (id)
 );
