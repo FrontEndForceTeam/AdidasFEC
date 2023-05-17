@@ -119,3 +119,11 @@ VALUES
 (1,8.5,10),
 (1,9,10),
 (1,9.5,10);
+
+INSERT INTO how_to_style
+(product_id, image_url, user_name)
+VALUES
+(1,'https://photorankmedia-a.akamaihd.net/media/a/y/t/aytej35/normal.jpg','adityab27'),
+(1,'https://photorankmedia-a.akamaihd.net/media/6/w/h/6whad55/normal.jpg','jeet_wadke09'),
+(1,'https://z1photorankmedia-a.akamaihd.net/media/v/4/h/v4hni55/normal.jpg','cristian.lazzarini'),
+(1,'https://photorankmedia-a.akamaihd.net/media/t/c/3/tc3tb65/normal.jpg','corrado');
