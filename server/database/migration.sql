@@ -52,5 +52,6 @@ CREATE TABLE review (
     color BOOLEAN,
     appearance BOOLEAN,
     quality BOOLEAN,
+    review_date DATE,
     FOREIGN KEY (product_id) REFERENCES Product (id)
 );

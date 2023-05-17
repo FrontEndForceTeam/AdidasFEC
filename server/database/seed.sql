@@ -106,9 +106,9 @@ INSERT INTO size
 (product_id, size, stock)
 VALUES
 (1,3,10),
-(1,3.5,10),
+(1,3.5,0),
 (1,4,10),
-(1,4.5,10),
+(1,4.5,0),
 (1,5,10),
 (1,5.5,10),
 (1,6,10),
@@ -118,7 +118,15 @@ VALUES
 (1,8,10),
 (1,8.5,10),
 (1,9,10),
-(1,9.5,10);
+(1,9.5,10),
+(1,10,10),
+(1,10.5,10),
+(1,11,10),
+(1,11.5,0),
+(1,12,0),
+(1,12.5,0),
+(1,13,0),
+(1,13.5,0);
 
 INSERT INTO how_to_style
 (product_id, image_url, user_name)
@@ -129,21 +137,21 @@ VALUES
 (1,'https://photorankmedia-a.akamaihd.net/media/t/c/3/tc3tb65/normal.jpg','corrado');
 
 INSERT INTO review
-(product_id, stars, account, likes, title, body, satisfaction, comfort, color,appearance, quality)
+(product_id, stars, account, likes, title, body, satisfaction, comfort, color,appearance, quality, review_date)
 VALUES 
-    (1, 5, 'user1', 5, 'Excellent product', 'Lorem ipsum dolor sit amet.', true, false, false, false, false),
-    (1, 4, 'user2', 5, 'Great value for money', 'Lorem ipsum dolor sit amet.', true, false, false, false, false),
-    (1, 5, 'user3', 5, 'Highly recommended', 'Lorem ipsum dolor sit amet.', false, true, false, false, false),
-    (1, 4, 'user4', 5, 'Good features', 'Lorem ipsum dolor sit amet.', false, true, false, false, false),
-    (1, 5, 'user5', 4, 'Impressive performance', 'Lorem ipsum dolor sit amet.', false, false, false, true, true),
-    (1, 5, 'user6', 5, 'Sleek design', 'Lorem ipsum dolor sit amet.', true, true, true, true, false),
-    (1, 4, 'user7', 4, 'Solid build quality', 'Lorem ipsum dolor sit amet.', true, true, true, true, true),
-    (1, 5, 'user8', 5, 'Love it!', 'Lorem ipsum dolor sit amet.', false, false, false, false, true),
-    (1, 4, 'user9', 5, 'Good value for money', 'Lorem ipsum dolor sit amet.', true, false, true, true, true),
-    (1, 5, 'user10', 5, 'Excellent purchase', 'Lorem ipsum dolor sit amet.', true, true, false, true, true),
-    (1, 5, 'user11', 4, 'Great product', 'Lorem ipsum dolor sit amet.', true, false, true, true, false),
-    (1, 5, 'user12', 5, 'Fantastic quality', 'Lorem ipsum dolor sit amet.', true, false, true, true, false),
-    (1, 4, 'user13', 5, 'Good overall performance', 'Lorem ipsum dolor sit amet.', false, true, true, true, true),
-    (1, 5, 'user14', 5, 'Great user experience', 'Lorem ipsum dolor sit amet.', true, true, false, true, true),
-    (1, 4, 'user15', 4, 'Solid purchase', 'Lorem ipsum dolor sit amet.', true, true, true, true, false);
+    (1, 5, 'user1', 5, 'Excellent product', 'Lorem ipsum dolor sit amet.', true, false, false, false, false, '2021-03-21'),
+    (1, 4, 'user2', 5, 'Great value for money', 'Lorem ipsum dolor sit amet.', true, false, false, false, false, '2021-03-21'),
+    (1, 5, 'user3', 5, 'Highly recommended', 'Lorem ipsum dolor sit amet.', false, true, false, false, false, '2021-03-21'),
+    (1, 4, 'user4', 5, 'Good features', 'Lorem ipsum dolor sit amet.', false, true, false, false, false, '2021-03-21'),
+    (1, 5, 'user5', 4, 'Impressive performance', 'Lorem ipsum dolor sit amet.', false, false, false, true, true, '2021-03-21'),
+    (1, 5, 'user6', 5, 'Sleek design', 'Lorem ipsum dolor sit amet.', true, true, true, true, false, '2021-03-21'),
+    (1, 4, 'user7', 4, 'Solid build quality', 'Lorem ipsum dolor sit amet.', true, true, true, true, true, '2021-03-21'),
+    (1, 5, 'user8', 5, 'Love it!', 'Lorem ipsum dolor sit amet.', false, false, false, false, true, '2021-03-21'),
+    (1, 4, 'user9', 5, 'Good value for money', 'Lorem ipsum dolor sit amet.', true, false, true, true, true, '2021-03-21'),
+    (1, 5, 'user10', 5, 'Excellent purchase', 'Lorem ipsum dolor sit amet.', true, true, false, true, true, '2021-03-21'),
+    (1, 5, 'user11', 4, 'Great product', 'Lorem ipsum dolor sit amet.', true, false, true, true, false, '2021-03-21'),
+    (1, 5, 'user12', 5, 'Fantastic quality', 'Lorem ipsum dolor sit amet.', true, false, true, true, false, '2021-03-21'),
+    (1, 4, 'user13', 5, 'Good overall performance', 'Lorem ipsum dolor sit amet.', false, true, true, true, true, '2021-03-21'),
+    (1, 5, 'user14', 5, 'Great user experience', 'Lorem ipsum dolor sit amet.', true, true, false, true, true, '2021-03-21'),
+    (1, 4, 'user15', 4, 'Solid purchase', 'Lorem ipsum dolor sit amet.', true, true, true, true, false, '2021-03-21');
 
