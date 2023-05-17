@@ -7,7 +7,7 @@ export default function Reviews() {
     <div className={styles['overall']}>
       <button className={styles["toggle-btn"]}>
         <div>Reviews (434)</div>
-        <div>4.7</div>
+        <div>4.7 ★★★★★</div>
         </button>
       <div className={styles["reviews-container"]}>
         <div className={styles["item-overview-container"]}>

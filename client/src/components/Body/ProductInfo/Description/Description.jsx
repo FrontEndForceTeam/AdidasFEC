@@ -10,8 +10,8 @@ export default function Description() {
       </button>
       <div className={styles["description-container"]}>
         <div className={styles["description"]}>
-          <h3 className={styles['header']}>PROGRESSIVE TRAINERS WITH MODERN STYLE.</h3>
-          <p>
+          <h2 className={styles['header']}>PROGRESSIVE TRAINERS WITH MODERN STYLE.</h2>
+          <p className={styles['paragraph']}>
             If you had to decide between style and innovation, which would you
             choose? Silly question. You shouldn't have to make a decision like
             that. Just lace up in these adidas ZX 5K Boost Shoes and be done
