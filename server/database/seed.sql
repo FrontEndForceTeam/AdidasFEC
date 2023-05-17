@@ -101,3 +101,21 @@ VALUES
 'recently viewed items', 6),
 (1,'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto,fl_lossy,c_fill,g_auto/6adc4e3647d0465daa1eaf2c01041e69_9366/Adicolor_Classics_SST_Tracksuit_Bottom_Black_IA4791_21_model.jpg',
 'recently viewed items', 7);
+
+INSERT INTO size 
+(product_id, size, stock)
+VALUES
+(1,3,10),
+(1,3.5,10),
+(1,4,10),
+(1,4.5,10),
+(1,5,10),
+(1,5.5,10),
+(1,6,10),
+(1,6.5,10),
+(1,7,10),
+(1,7.5,10),
+(1,8,10),
+(1,8.5,10),
+(1,9,10),
+(1,9.5,10);

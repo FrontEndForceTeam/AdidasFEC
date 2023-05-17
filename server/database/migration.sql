@@ -19,7 +19,7 @@ CREATE TABLE product (
 
 CREATE TABLE size (
     product_id INT,
-    size INT,
+    size FLOAT,
     stock INT,
     FOREIGN KEY (product_id) REFERENCES Product (id)
 );
