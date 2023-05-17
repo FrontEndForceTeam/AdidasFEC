@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PreHeaderOverlay from "./PreHeaderOverlay/PreHeaderOverlay";
 import styles from "./PreHeader.module.css";
 
 export default function PreHeader() {
@@ -6,6 +7,7 @@ export default function PreHeader() {
     useState("RETURNS & EXCHANGE");
   const [isFirstValue, setIsFirstValue] = useState(true);
   const [isFadeIn, setIsFadeIn] = useState(false);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,8 +27,21 @@ export default function PreHeader() {
     setIsFadeIn(false);
   }, [isFirstValue]);
 
+  const handleArrowDownClick = () => {
+    setIsOverlayVisible((prevState) => !prevState);
+  };
+
+  useEffect(() => {
+    if (isOverlayVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOverlayVisible]);
+
   return (
     <header className={styles["preheader-container"]}>
+      {isOverlayVisible && <PreHeaderOverlay />}
       <div
         className={`${styles["preheader-details-container"]} ${
           isFadeIn && styles.fadeIn
@@ -43,6 +58,7 @@ export default function PreHeader() {
           className={`${styles["arrow-down"]} ${isFadeIn && styles.fadeIn}`}
           src="./img/arrow-down-white.svg"
           alt="arrow-down"
+          onClick={handleArrowDownClick}
         />
       </div>
     </header>
