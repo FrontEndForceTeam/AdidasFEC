@@ -20,7 +20,9 @@
     justify-content: space-between;
     font-size: large;
     border-top: 2px solid #eceff1;
+    cursor: pointer;
   }
+
 
 
   .stars {

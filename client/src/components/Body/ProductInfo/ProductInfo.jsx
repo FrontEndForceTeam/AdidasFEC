@@ -21,7 +21,7 @@ export default function ProductInfo() {
           </div>
         }
         content={
-          <div>
+          <div className={styles['content']}>
             <Reviews />
           </div>
         }
@@ -29,7 +29,7 @@ export default function ProductInfo() {
       <AccordionButton
         title={<button className={styles["toggle-btn"]}>Description</button>}
         content={
-          <div>
+          <div className={styles['content']}>
             <Description />
           </div>
         }
@@ -37,7 +37,7 @@ export default function ProductInfo() {
       <AccordionButton
         title={<button className={styles["toggle-btn"]}>Details</button>}
         content={
-          <div>
+          <div className={styles['content']}>
             <Details />
           </div>
         }
@@ -45,7 +45,7 @@ export default function ProductInfo() {
       <AccordionButton
         title={<button className={styles["toggle-btn"]}>How to style</button>}
         content={
-          <div>
+          <div className={styles['content']}>
             <Style />
           </div>
         }
