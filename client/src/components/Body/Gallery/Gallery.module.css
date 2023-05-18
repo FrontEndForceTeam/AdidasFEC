@@ -61,3 +61,27 @@ video {
   height: 20px;
   padding-left: 8px;
 }
+#shoe-selection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  background-color: white;
+  border: 0;
+  position: sticky;
+  bottom: 10%;
+  z-index: 4;
+}
+.shoe-selection-element {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+}
+#shoe-selection-gallery {
+  display: flex;
+  justify-self: center;
+}
+#shoe-selection-container.static {
+  position: relative;
+  z-index: 1;
+}

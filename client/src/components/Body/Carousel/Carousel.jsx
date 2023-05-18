@@ -29,7 +29,6 @@ export default function Carousel(props) {
         slidesPerView={4}
         centeredSlides={false}
         slidesPerGroup={3}
-        // grabCursor={true}
         scrollbar={true}
         navigation={{
           prevEl: navigationPrevRef.current,
