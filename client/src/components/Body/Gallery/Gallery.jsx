@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import styles from "./Gallery.module.css";
+import { useParams } from "react-router-dom";
 
-let apiURL = "http://127.0.0.1:3500/gallery/1";
+// let apiURL = `http://127.0.0.1:3500/gallery/1`;
 
-export default function Gallery() {
+export default function Gallery(props) {
   const [galleryArray, setGalleryArray] = useState(null);
+  const { id } = useParams();
+  const [shoeChange, setShoeChange] = useState(false);
 
   useEffect(() => {
     const getAPI = async () => {
+      let apiURL = `http://127.0.0.1:3500/gallery/${props.shoe}`;
       let response = await fetch(apiURL);
       let data = await response.json();
       setGalleryArray(data);
@@ -37,6 +41,14 @@ export default function Gallery() {
             );
           })}
         </div>
+        <button
+          onClick={() => {
+            props.handleShoeChange(2);
+          }}
+          style={{ height: "300px" }}
+        >
+          pick shoe
+        </button>
         <ShowMoreButton />
       </>
     )
@@ -74,7 +86,7 @@ function ProductVideo(props) {
 function ShowMoreButton(props) {
   const [showBtn, setShowBtn] = useState("Show More");
   const [arrow, setArrow] = useState(
-    <svg id={styles["arrow"]}>
+    <svg id={styles["arrow"]} height={20} width={20}>
       <path
         fill="none"
         stroke="currentColor"
@@ -95,7 +107,7 @@ function ShowMoreButton(props) {
             setArrowDown(true);
             setShowBtn("Show Less");
             setArrow(
-              <svg id={styles["arrow"]}>
+              <svg id={styles["arrow"]} height={20} width={20}>
                 <path
                   fill="none"
                   stroke="currentColor"
@@ -109,7 +121,7 @@ function ShowMoreButton(props) {
             setArrowDown(false);
             setShowBtn("Show More");
             setArrow(
-              <svg id={styles["arrow"]}>
+              <svg id={styles["arrow"]} height={20} width={20}>
                 <path
                   fill="none"
                   stroke="currentColor"

@@ -4,11 +4,11 @@ import ProductInfo from "./ProductInfo/ProductInfo";
 import Sidebar from "./Sidebar/Sidebar";
 import styles from "./Body.module.css";
 
-export default function Body() {
+export default function Body(props) {
   return (
     <div id={styles["body-container"]}>
       <div id={styles["main"]}>
-        <Gallery />
+        <Gallery shoe={props.shoe} handleShoeChange={props.handleShoeChange} />
         <Carousel />
         <ProductInfo />
         <Carousel />
