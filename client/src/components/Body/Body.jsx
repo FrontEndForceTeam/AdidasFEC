@@ -9,10 +9,13 @@ export default function Body(props) {
     <div id={styles["body-container"]}>
       <div id={styles["main"]}>
         <Gallery shoe={props.shoe} handleShoeChange={props.handleShoeChange} />
-        <Carousel />
-        <ProductInfo />
-        <Carousel />
-        <Carousel />
+        <ProductInfo shoe={props.shoe} />
+        {/* complete the look */}
+        <Carousel shoe={props.shoe} type="complete the look" />
+        {/* youmay also like */}
+        <Carousel shoe={props.shoe} type="you may also like" />
+        {/* others also bought */}
+        <Carousel shoe={props.shoe} type="others also bought" />
       </div>
       <div id={styles["sidebar-container"]}>
         <Sidebar />

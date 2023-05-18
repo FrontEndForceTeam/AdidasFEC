@@ -1,6 +1,6 @@
 import styles from "./Carousel.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,16 +11,21 @@ import "swiper/css/pagination";
 import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper";
 
 export default function Carousel(props) {
-  const testData = [
-    { img: 1 },
-    { img: 2 },
-    { img: 3 },
-    { img: 4 },
-    { img: 5 },
-    { img: 6 },
-    { img: 7 },
-    { img: 8 },
-  ];
+  const [imageArray, setImageArray] = useState();
+  const getAPI = async () => {
+    let apiURL = `http://127.0.0.1:3500/imagecarousel/${props.shoe}`;
+    // console.log(apiURL);
+    let response = await fetch(apiURL);
+    let data = await response.json();
+    console.log(data);
+    setImageArray(data);
+  };
+  useEffect(() => {
+    getAPI();
+  }, []);
+  useEffect(() => {
+    getAPI();
+  }, [props.shoe]);
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   return (
@@ -37,16 +42,19 @@ export default function Carousel(props) {
         modules={[Keyboard, Scrollbar, Navigation, Pagination]}
         className={styles["swiper"]}
       >
-        {testData.map((image) => {
-          return (
-            <SwiperSlide className="test">
-              <CarouselElement
-                className={styles["product-card"]}
-                image={image.img}
-              />
-            </SwiperSlide>
-          );
-        })}
+        {imageArray &&
+          imageArray.map((image) => {
+            if (image.element == props.type) {
+              return (
+                <SwiperSlide className="test">
+                  <CarouselElement
+                    className={styles["product-card"]}
+                    image={image.image_url}
+                  />
+                </SwiperSlide>
+              );
+            }
+          })}
       </Swiper>
       <svg
         ref={navigationNextRef}
@@ -85,7 +93,10 @@ export default function Carousel(props) {
 function CarouselElement(props) {
   return (
     <div className={styles["product-card"]}>
-      <div className={styles["card-top"]}>
+      <div
+        className={styles["card-top"]}
+        style={{ backgroundImage: `url(${props.image})` }}
+      >
         <p className={styles["price"]}>$10</p>
       </div>
       <div className={styles["card-bottom"]}>
