@@ -2,40 +2,102 @@
 import express from "express";
 import dotenv from "dotenv";
 import pg from "pg";
-//const { Client } = pg;  //<--not used if using pool()
-const { Pool } = pg;
+import cors from "cors";
+
+const { Client } = pg;
 
 const app = express();
-app.use(express.static("public"));  //<-- right after `app` is created and before routes
+app.use(express.static("public"));
 
-dotenv.config();  //<-- has to be before 'process.env' is called
-const port = process.env.PORT || 3000;
+dotenv.config(); //<-- has to be before 'process.env' is called
+const port = process.env.apiPort || 3000;
+const url = process.env.apiURL || "127.0.0.1";
 
-//const client = new Client(process.env.DATABASE_URL);
-//client.connect();
+const client = new Client(process.env.connectionString);
+client.connect();
 
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    max: 5 //<--max num of connections, change as needed
+app.use(express.json());
+
+app.use(cors());
+
+app.get("/", (req, res) => {
+  res.send("Hello, world!");
 });
 
-app.use(express.json());  //<--has to be before routes
-
-app.get("/", (req, res) => {   
-    res.send("Hello, world!");
+app.get("/imagecarousel/:id", async (req, res) => {
+  try {
+    let response = await client.query(
+      `SELECT * FROM image WHERE product_id=$1
+      AND element='you may also like'
+      OR element='others also bought'
+      OR element='recently viewed items';`,
+      [req.params.id]
+    );
+    res.status(200).send(response.rows);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("something went wrong (carousel)");
+  }
 });
 
-app.get('/api/shoe_inventory', (req, res) => {
-    pool.query(`SELECT * FROM shoe_inventory`, (err, response) => {
-        console.log(err ? err : response.rows)
-        res.json(response.rows)
-    })
-})
+app.get("/gallery/:id", async (req, res) => {
+  try {
+    let response = await client.query(
+      `
+    SELECT * FROM image WHERE product_id=$1
+    AND element='gallery';
+    `,
+      [req.params.id]
+    );
+    res.status(200).send(response.rows);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("something went wrong (gallery)");
+  }
+});
 
-app.listen(port, err => {
-    if (err) {
-        console.error(err);
-    } else {
-        console.log(`Server started on port ${port}`);
-    }
+app.get("/productinfo/:id", async (req, res) => {
+  try {
+    let response = await client.query(
+      `
+        SELECT review.*, image.image_url, product.rating, product.details, 
+        product.description, product.description_title, product.description_image
+        FROM review
+        JOIN image ON image.product_id=$1 AND element='description'
+        JOIN product ON product.id=$1
+        WHERE review.product_id=$1`,
+      [req.params.id]
+    );
+    res.status(200).send(response.rows);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("something went wrong (reviews)");
+  }
+});
+
+app.get("/sidebar/:id", async (req, res) => {
+  try {
+    let response = await client.query(
+      `
+    SELECT 
+    product.rating, product.price, product.discounted_price,
+    size.size, size.stock
+    FROM product
+    JOIN size ON size.product_id=$1
+    WHERE product.id=$1`,
+      [req.params.id]
+    );
+    res.status(200).send(response.rows);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("something went wrong (sidebar)");
+  }
+});
+
+app.listen(port, url, (err) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(`Server started on port ${port}`);
+  }
 });

@@ -1,13 +1,9 @@
 import styles from "./Description.module.css";
 
 export default function Description() {
-  function buttonClickHandler() {}
 
   return (
     <div>
-      <button className={styles["toggle-btn"]} onClick={buttonClickHandler}>
-        Description
-      </button>
       <div className={styles["description-container"]}>
         <div className={styles["description"]}>
           <h2 className={styles['header']}>PROGRESSIVE TRAINERS WITH MODERN STYLE.</h2>
