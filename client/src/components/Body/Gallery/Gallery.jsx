@@ -1,8 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import styles from "./Gallery.module.css";
 
-// let apiURL = `http://127.0.0.1:3500/gallery/1`;
-
 export default function Gallery(props) {
   const [galleryArray, setGalleryArray] = useState(null);
 
