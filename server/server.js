@@ -61,18 +61,31 @@ app.get("/productinfo/:id", async (req, res) => {
   try {
     let response = await client.query(
       `
-        SELECT review.*, image.image_url, product.rating, product.details, 
+        SELECT review.*, image.image_url, product.rating, product.details,
         product.description, product.description_title, product.description_image
         FROM review
         JOIN image ON image.product_id=$1 AND element='description'
         JOIN product ON product.id=$1
-        WHERE review.product_id=$1`,
+        WHERE review.product_id=$1;`,
       [req.params.id]
     );
     res.status(200).send(response.rows);
   } catch (error) {
     console.log(error);
     res.status(400).send("something went wrong (reviews)");
+  }
+});
+
+app.get("/productinfo/howtostyle/:id", async (req, res) => {
+  try {
+    let response = await client.query(
+      `SELECT * FROM how_to_style WHERE product_id=$1`,
+      [req.params.id]
+    );
+    res.status(200).send(response.rows);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("something went wrong (reviews how to style)");
   }
 });
 
