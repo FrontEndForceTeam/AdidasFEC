@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-bottom: 2px solid #eceff1;
 }
 
 .description {
@@ -12,8 +11,8 @@
 }
 
 .image {
-  width: 50%;
-  text-align: center;
+  transform: scale(.6);
+  width: 20%;
 }
 
 .toggle-btn {

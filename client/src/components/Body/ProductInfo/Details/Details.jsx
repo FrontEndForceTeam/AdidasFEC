@@ -3,7 +3,6 @@ import styles from "./Details.module.css";
 export default function Details() {
   return (
     <div>
-      <button className={styles["toggle-btn"]}>Details</button>
       <div className={styles["details-container"]}>
         <ul>
           <li className={styles['list-items']}>Lace closure</li>

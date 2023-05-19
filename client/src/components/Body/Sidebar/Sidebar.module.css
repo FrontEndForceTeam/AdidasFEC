@@ -1,8 +1,9 @@
 .sidebar-container {
   background-color: white;
   height: 100vh;
+  width: 450px;
   color: black;
-  font-size: 2rem;
+  z-index: 57;
   /* box-sizing: border-box; */
   display: flex;
   /* flex: 0 0 430px; */
@@ -11,7 +12,9 @@
   font-family: AdihausDIN-Condia, Arial, Helvetica, sans-serif;
   flex-direction: column;
   font-size: 16px;
-  /* position: relative; */
+  position: sticky;
+  top: 10px;
+  bottom: 1px;
   /* -webkit-font-smoothing: antialiased; */
 }
 
@@ -24,7 +27,6 @@
     flex-wrap: wrap; */
 }
 .preHeader {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   min-height: 24px;
@@ -34,8 +36,11 @@
   font-size: 16px;
 }
 
+
+
 .reviewCount {
   display: flex;
+  font-weight: bold;
 }
 
 button {
@@ -46,6 +51,7 @@ button {
 .productTitle {
   font-size: 30px;
   margin-top: 10px;
+  font-weight: bold;
 }
 
 .priceWrapper {
@@ -97,10 +103,142 @@ button {
   font-style: normal;
 }
 
-span {
+ .heading {
   font-weight: bold;
-}
+} 
 
 .embellishDescription {
   margin-top: 10px;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  grid-column-gap: 10px;
+}
+
+.input{
+  display:flex;
+  border: 1px solid;
+}
+
+#leftShoeText {
+  text-transform: uppercase;
+}
+
+#rightShoeText {
+  text-transform: uppercase;
+}
+
+.inputBox {
+  border: 1px solid transparent;
+}
+
+.input_label {
+  color: #767677;
+  left: 15px;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(0-50%);
+}
+
+.inputBox {
+  height: 45px;
+}
+
+.inputBoxContainer {
+  position: relative;
+}
+
+
+
+.inputCount {
+  margin-left: 10px;
+}
+
+.summary {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.embellishPrice {
+ 
+  font-weight: bold;
+}
+
+.clearButton {
+  text-decoration: underline;
+  margin-left: 100px;;
+}
+
+/* ADD TO BAG */
+#AddToBag {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+}
+
+.AddToBag {
+  width:100%;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: white;
+  display: flex;
+  background-color: black;
+  color: white;
+  justify-content: space-between;
+  border-color: black;
+  height: 50px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 20px;
+  transform: translate(-3px);
+  align-items: center;
+  position: relative;
+  text-align: left;
+}
+
+.AddToBagTitle {
+  margin-left: 15px;
+  font-weight: bold;
+  flex: 1 1 auto;
+  text-overflow: ellipsis;
+}
+.rtarrowicon {
+  height: 20px;
+  width: 35px;
+  margin-right: 15px;
+}
+
+.addToWishListContainer {
+  margin-left: 10px;
+  aspect-ratio: 1/1;
+  align-items: center;
+  background-color: white;
+  border-color: black;
+  border: 1px solid;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  flex-basis: auto;
+}
+
+.favContainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+}
+
+.favoriteIcon {
+
 }

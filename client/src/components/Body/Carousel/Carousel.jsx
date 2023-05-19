@@ -1,6 +1,6 @@
 import styles from "./Carousel.module.css";
+import { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useRef } from "react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,25 +11,29 @@ import "swiper/css/pagination";
 import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper";
 
 export default function Carousel(props) {
-  const testData = [
-    { img: 1 },
-    { img: 2 },
-    { img: 3 },
-    { img: 4 },
-    { img: 5 },
-    { img: 6 },
-    { img: 7 },
-    { img: 8 },
-  ];
+  const [imageArray, setImageArray] = useState();
+  const getAPI = async () => {
+    let apiURL = `http://127.0.0.1:3500/imagecarousel/${props.shoe}`;
+    let response = await fetch(apiURL);
+    let data = await response.json();
+    setImageArray(data);
+    console.log(data);
+  };
+  useEffect(() => {
+    getAPI();
+  }, []);
+  useEffect(() => {
+    getAPI();
+  }, [props.shoe]);
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   return (
     <>
+      <h1 className={styles["slider-header"]}>{props.type}</h1>
       <Swiper
         slidesPerView={4}
         centeredSlides={false}
         slidesPerGroup={3}
-        // grabCursor={true}
         scrollbar={true}
         navigation={{
           prevEl: navigationPrevRef.current,
@@ -38,24 +42,22 @@ export default function Carousel(props) {
         modules={[Keyboard, Scrollbar, Navigation, Pagination]}
         className={styles["swiper"]}
       >
-        {testData.map((image) => {
-          return (
-            <SwiperSlide className="test">
-              <CarouselElement
-                className={styles["product-card"]}
-                image={image.img}
-              />
-            </SwiperSlide>
-          );
-        })}
+        {imageArray &&
+          imageArray.map((image, index) => {
+            if (image.element == props.type) {
+              return (
+                <SwiperSlide key={`${image.element}-${index}`}>
+                  <CarouselElement
+                    className={styles["product-card"]}
+                    image={image.image_url}
+                    product_title={image.product_title}
+                  />
+                </SwiperSlide>
+              );
+            }
+          })}
       </Swiper>
-      <svg
-        ref={navigationNextRef}
-        className={styles["carousel-btn-next"]}
-        onClick={() => {
-          console.log("forward");
-        }}
-      >
+      <svg ref={navigationNextRef} className={styles["carousel-btn-next"]}>
         <path
           d="m17.59 7 5 5-5 5M0 12h22"
           fill="none"
@@ -64,13 +66,7 @@ export default function Carousel(props) {
           strokeWidth="2"
         ></path>
       </svg>
-      <svg
-        ref={navigationPrevRef}
-        className={styles["carousel-btn-prev"]}
-        onClick={() => {
-          console.log("backward");
-        }}
-      >
+      <svg ref={navigationPrevRef} className={styles["carousel-btn-prev"]}>
         <path
           fill="none"
           stroke="currentColor"
@@ -86,11 +82,18 @@ export default function Carousel(props) {
 function CarouselElement(props) {
   return (
     <div className={styles["product-card"]}>
-      <div className={styles["card-top"]}>
+      <div
+        className={styles["card-top"]}
+        style={{ backgroundImage: `url(${props.image})` }}
+      >
         <p className={styles["price"]}>$10</p>
       </div>
       <div className={styles["card-bottom"]}>
-        <h1>Cyka Blyat</h1>
+        {props.product_title ? (
+          <h1>{props.product_title}</h1>
+        ) : (
+          <h1>Cyka Blyat</h1>
+        )}
         <p className={styles["card-desc"]}>Originals</p>
       </div>
     </div>
