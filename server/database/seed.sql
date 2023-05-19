@@ -98,7 +98,7 @@ VALUES
 (1,'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto,fl_lossy,c_fill,g_auto/297fd532953f4034b245aeb500ce2991_9366/Adifom_SLTN_Shoes_Black_HP6480_01_standard.jpg',
 'recently viewed items', 5, 'Ozelia Shoes'),
 (1,'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdd2ed4315b74f6ea506acb600b20504_9366/OZWEEGO_Shoes_Beige_FX6029_01_standard.jpg',
-'recently viewed items', 6, 'null'),
+'recently viewed items', 6, 'Gopnik Delight'),
 (1,'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto,fl_lossy,c_fill,g_auto/6adc4e3647d0465daa1eaf2c01041e69_9366/Adicolor_Classics_SST_Tracksuit_Bottom_Black_IA4791_21_model.jpg',
 'recently viewed items', 7, 'Ozelia Shoes'),
 (1,'https://assets.adidas.com/images/w_320,h_320,f_auto,q_auto,fl_lossy,c_fill,g_auto/a6f82e427a614cfb8d6caed9010f3adc_9366/HL9181_21_model.jpg', 'complete the look',1, 'Down Regen Hooded Puffer Jacket'),
