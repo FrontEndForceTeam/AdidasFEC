@@ -46,7 +46,7 @@ export default function Carousel(props) {
           imageArray.map((image, index) => {
             if (image.element == props.type) {
               return (
-                <SwiperSlide className="test" key={`${image.element}-${index}`}>
+                <SwiperSlide key={`${image.element}-${index}`}>
                   <CarouselElement
                     className={styles["product-card"]}
                     image={image.image_url}
