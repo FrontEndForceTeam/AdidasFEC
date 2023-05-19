@@ -100,7 +100,11 @@ VALUES
 (1,'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdd2ed4315b74f6ea506acb600b20504_9366/OZWEEGO_Shoes_Beige_FX6029_01_standard.jpg',
 'recently viewed items', 6),
 (1,'https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto,fl_lossy,c_fill,g_auto/6adc4e3647d0465daa1eaf2c01041e69_9366/Adicolor_Classics_SST_Tracksuit_Bottom_Black_IA4791_21_model.jpg',
-'recently viewed items', 7);
+'recently viewed items', 7),
+(1,'https://assets.adidas.com/images/w_320,h_320,f_auto,q_auto,fl_lossy,c_fill,g_auto/a6f82e427a614cfb8d6caed9010f3adc_9366/HL9181_21_model.jpg', 'complete the look',1),
+(1,'https://assets.adidas.com/images/w_320,h_320,f_auto,q_auto,fl_lossy,c_fill,g_auto/ccc553afd6d04395beeaaf330103051d_9366/HS2068_21_model.jpg', 'complete the look',1),
+(1,'https://assets.adidas.com/images/w_320,h_320,f_auto,q_auto,fl_lossy,c_fill,g_auto/3b476a038a32465d8dd3ae8000bc8652_9366/HK7319_21_model.jpg', 'complete the look',1),
+(1,'https://assets.adidas.com/images/w_320,h_320,f_auto,q_auto,fl_lossy,c_fill,g_auto/d80b46ed2ee34e51a2bbaf2a009e5b8f_9366/IB9362_01_standard.jpg', 'complete the look',1);
 
 INSERT INTO size 
 (product_id, size, stock)
