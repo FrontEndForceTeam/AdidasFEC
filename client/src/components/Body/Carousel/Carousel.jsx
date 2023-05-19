@@ -14,10 +14,8 @@ export default function Carousel(props) {
   const [imageArray, setImageArray] = useState();
   const getAPI = async () => {
     let apiURL = `http://127.0.0.1:3500/imagecarousel/${props.shoe}`;
-    // console.log(apiURL);
     let response = await fetch(apiURL);
     let data = await response.json();
-    console.log(data);
     setImageArray(data);
   };
   useEffect(() => {
@@ -43,10 +41,10 @@ export default function Carousel(props) {
         className={styles["swiper"]}
       >
         {imageArray &&
-          imageArray.map((image) => {
+          imageArray.map((image, index) => {
             if (image.element == props.type) {
               return (
-                <SwiperSlide className="test">
+                <SwiperSlide className="test" key={`${image.element}-${index}`}>
                   <CarouselElement
                     className={styles["product-card"]}
                     image={image.image_url}
@@ -56,13 +54,7 @@ export default function Carousel(props) {
             }
           })}
       </Swiper>
-      <svg
-        ref={navigationNextRef}
-        className={styles["carousel-btn-next"]}
-        onClick={() => {
-          console.log("forward");
-        }}
-      >
+      <svg ref={navigationNextRef} className={styles["carousel-btn-next"]}>
         <path
           d="m17.59 7 5 5-5 5M0 12h22"
           fill="none"
@@ -71,13 +63,7 @@ export default function Carousel(props) {
           strokeWidth="2"
         ></path>
       </svg>
-      <svg
-        ref={navigationPrevRef}
-        className={styles["carousel-btn-prev"]}
-        onClick={() => {
-          console.log("backward");
-        }}
-      >
+      <svg ref={navigationPrevRef} className={styles["carousel-btn-prev"]}>
         <path
           fill="none"
           stroke="currentColor"

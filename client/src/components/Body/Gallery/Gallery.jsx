@@ -6,7 +6,6 @@ export default function Gallery(props) {
 
   const getAPI = async () => {
     let apiURL = `http://127.0.0.1:3500/gallery/${props.shoe}`;
-    console.log(apiURL);
     let response = await fetch(apiURL);
     let data = await response.json();
     setGalleryArray(data);
@@ -155,11 +154,12 @@ function ShoePicker(props) {
     <div className="" id={styles["shoe-selection-container"]}>
       <h2>3 COLOURS AVAILABLE</h2>
       <div id={styles["shoe-selection-gallery"]}>
-        {urlArr.map((shoe) => {
+        {urlArr.map((shoe, index) => {
           return (
             <ShoeSelection
               shoe={shoe}
               handleShoeChange={props.handleShoeChange}
+              key={`shoe-picker-${index}`}
             />
           );
         })}
@@ -174,7 +174,6 @@ function ShoeSelection(props) {
       className={styles["shoe-selection-element"]}
       onClick={() => {
         props.handleShoeChange(props.shoe.id);
-        // console.log("t");
       }}
     >
       <img src={props.shoe.url} alt="shoe_pick" id={props.shoe.id} />
