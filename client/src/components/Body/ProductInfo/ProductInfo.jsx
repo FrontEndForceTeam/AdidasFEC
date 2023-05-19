@@ -4,8 +4,21 @@ import Details from "./Details/Details";
 import Style from "./HowToStyle/Style";
 import styles from "./ProductInfo.module.css";
 import AccordionButton from "./Accordion/AccordionButton";
+import { useEffect, useState } from "react";
 
 export default function ProductInfo() {
+
+  const [productInfo, setProductInfo] = useState(null);
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:3500/productinfo/1')
+      .then((res) => res.json())
+      .then((data) => {
+        setProductInfo(data);
+        console.log(productInfo)
+      });
+  },[]);
+
   return (
     <div className={styles["product-info-container"]}>
       <AccordionButton
@@ -22,7 +35,7 @@ export default function ProductInfo() {
         }
         content={
           <div className={styles['content']}>
-            <Reviews />
+            <Reviews productInfo = {productInfo}/>
           </div>
         }
       />
@@ -30,7 +43,7 @@ export default function ProductInfo() {
         title={<button className={styles["toggle-btn"]}>Description</button>}
         content={
           <div className={styles['content']}>
-            <Description />
+            <Description productInfo = {productInfo}/>
           </div>
         }
       />
