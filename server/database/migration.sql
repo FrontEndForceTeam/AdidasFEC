@@ -29,6 +29,7 @@ CREATE TABLE image (
     image_url TEXT,
     element VARCHAR(255),
     i int,
+    product_title VARCHAR(255),
     FOREIGN KEY (product_id) REFERENCES Product (id)
 );
 

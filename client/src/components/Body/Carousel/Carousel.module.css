@@ -9,26 +9,24 @@
   display: flex;
   justify-content: center;
 }
-
 .swiper-slide {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   flex-grow: 1;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
 }
 .product-card {
   /* border: 1px solid green; */
-  height: 90%;
-  width: 85%;
+  height: 85%;
+  width: 65%;
   margin-top: 12px;
   margin-bottom: 12px;
 }
 .card-top {
   height: 80%;
   display: flex;
-  /* background-image: url("https://assets.adidas.com/images/w_600,f_auto,q_auto/0cb07ce217a64c1ca3a1ad7400c40178_9366/ZX_5K_Boost_Shoes_Black_GX8664.jpg"); */
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -49,7 +47,7 @@
   justify-content: center;
 }
 .card-bottom h1 {
-  font-size: 2.5em;
+  font-size: 2em;
 }
 .card-desc {
   color: gray;
@@ -86,4 +84,13 @@
 .carousel-btn-next:hover {
   transition: 0.4s ease-in-out;
   opacity: 1;
+}
+
+.slider-header {
+  font-size: 2rem;
+  align-self: flex-start;
+  padding-left: 85px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: var(--font-family-adihaus-bold);
 }
