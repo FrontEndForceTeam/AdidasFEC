@@ -1,66 +1,123 @@
-import React from 'react';
-import styles from "./Sidebar.module.css";
+import React, { useState, useEffect } from "react";
+import styles from "./ShoeInventory.module.css";
 
-class ShoeInventory extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sizes: [],
-    };
-  }
+const ShoeInventory = () => {
+  // State variables
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [shoeInventory, setShoeInventory] = useState([]);
+  const [scarcity, setScarcity] = useState(false);
+  const [clickedSize, setClickedSize] = useState(null);
 
-  componentDidMount() {
-    // Fetch sizes and quantities from the server
-    fetch('http://localhost:3010/api/shoe_inventory')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ sizes: data });
-        console.log(data);
-      })
+  useEffect(() => {
+    // Fetch shoe inventory on component mount
+    fetchShoeInventory();
+  }, []);
 
-      .catch(error => console.log(error));
-  }
-
-  handleAlert = (size) => {
-    const email = prompt(`Enter your email address to get notified when size ${size} is back in stock:`);
-    // Perform further actions with the entered email address (e.g., send it to the server)
+  const fetchShoeInventory = async () => {
+    try {
+      const response = await fetch("http://localhost:3010/sidebar/1");
+      const data = await response.json();
+      setShoeInventory(data);
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching shoe inventory:", error);
+    }
   };
 
-  render() {
-    const { sizes } = this.state;
+  const handleSizeClick = (size) => {
+    if (size.stock === 0) {
+      setShowModal(true);
+      setSelectedSize(size);
+    } else if (size.stock < 5) {
+      setShowModal(false);
+      setScarcity(true);
+      console.log(`Selected size ${size.size}`);
+    } else {
+      setShowModal(false);
+      setScarcity(false);
+      console.log(`Selected size ${size.size}`);
+    }
+    setClickedSize(size);
+  };
 
-    // Group sizes into rows with 5 buttons per row
-    const rows = [];
-    let currentRow = [];
-    sizes.forEach((size, index) => {
-      currentRow.push(
-        <button
-          key={index}
-          disabled={size.quantity === 0}
-          onClick={() => {
-            if (size.quantity === 0) {
-              this.handleAlert(size.size);
-            } else {
-              // Perform actions for when a button with available quantity is clicked
-            }
-          }}
-        >
-          {size.size}
-        </button>
-      );
-
-      if ((index + 1) % 5 === 0 || index === sizes.length - 1) {
-        rows.push(<div key={index} className="row">{currentRow}</div>);
-        currentRow = [];
-      }
-    });
-
-    return (
-      <div>
-        <div>{rows}</div>
+  return (
+    <div className={styles.buySection}>
+      {/* Sizes heading */}
+      <div className={styles.headingContainer}>
+        <div className={styles.heading}>Sizes</div>
       </div>
-    )
-  }
-}
+      <div className={styles.sizeSelector}>
+        {/* Render shoe buttons */}
+        {shoeInventory.map((shoe, index) => (
+          <React.Fragment key={shoe.size}>
+            <button
+              className={`${styles.sizeButton} ${
+                selectedSize === shoe && shoe.stock !== 0 ? styles.selectedSize : ""
+              } ${shoe.stock === 0 ? styles.outOfStock : ""} ${
+                clickedSize === shoe && shoe.stock !== 0 ? styles.clickedSize : ""
+              }`}
+              onClick={() => handleSizeClick(shoe)}
+            >
+              {shoe.stock === 0 && (
+                <>
+                  {shoe.size}
+                  <img
+                    className={styles.notificationIcon}
+                    src="./public/img/notification.jpg"
+                    alt="notification"
+                  />
+                </>
+              )}
+              {shoe.stock !== 0 && shoe.size}
+            </button>
+          </React.Fragment>
+        ))}
+      </div>
+
+      {/* Scarcity message */}
+      {scarcity && (
+        <div className={styles.scarcityMessage}>
+          Don't miss out, last items available.
+        </div>
+      )}
+
+      {/* Modal */}
+      {showModal && (
+        <div className="modal">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            onChange={(e) => console.log(e.target.value)}
+          />
+          <button onClick={() => setShowModal(false)}>Close</button>
+        </div>
+      )}
+
+      {/* Side control */}
+      <div className={styles.sideControl}>
+        <img className={styles.ruler} src="./public/img/ruler.jpg" alt="ruler" />
+        <span className={styles.sizeGuide}>Size guide</span>
+      </div>
+
+      {/* Fit guidance */}
+      <div className={styles.fitGuidanceContainer}>
+        <div className={styles.sizeAdvice}>
+          <img
+            className={styles.informationIcon}
+            src="./public/img/informationIcon.png"
+            alt="information icon"
+          />
+          <p className={styles.sizeAlert}>
+            <span className={styles.trueToSize}>True to size.</span>
+            <span className={styles.sizeRecommendation}>
+              We recommend ordering your usual size.
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default ShoeInventory;
