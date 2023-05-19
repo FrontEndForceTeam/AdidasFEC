@@ -2,4 +2,7 @@
 GET http://localhost:3010
 
 ###
-GET http://localhost:3010/api/shoe_inventory
+GET http://localhost:3010/sidebar/1
+
+###
+GET http://localhost:3010/productinfo/1

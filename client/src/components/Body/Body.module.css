@@ -13,6 +13,8 @@
 #sidebar-container {
   width: 520px;
   position: sticky;
+  top: 10%;
+  bottom: 10%;
 }
 /* @media screen and (min-width: 960px) {
   .body-container {

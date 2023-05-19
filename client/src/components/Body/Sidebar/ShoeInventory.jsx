@@ -1,31 +1,35 @@
 import React, { useState, useEffect } from "react";
-import styles from "./Sidebar.module.css";
+import styles from "./ShoeInventory.module.css";
 
 const ShoeInventory = () => {
+  // State variables
   const [selectedSize, setSelectedSize] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [shoeInventory, setShoeInventory] = useState([]);
   const [scarcity, setScarcity] = useState(false);
+  const [clickedSize, setClickedSize] = useState(null);
 
   useEffect(() => {
+    // Fetch shoe inventory on component mount
     fetchShoeInventory();
   }, []);
 
   const fetchShoeInventory = async () => {
     try {
-      const response = await fetch("http://localhost:3010/api/shoe_inventory");
+      const response = await fetch("http://localhost:3010/sidebar/1");
       const data = await response.json();
       setShoeInventory(data);
+      console.log(data);
     } catch (error) {
       console.error("Error fetching shoe inventory:", error);
     }
   };
 
   const handleSizeClick = (size) => {
-    if (size.quantity === 0) {
+    if (size.stock === 0) {
       setShowModal(true);
       setSelectedSize(size);
-    } else if (size.quantity < 5) {
+    } else if (size.stock < 5) {
       setShowModal(false);
       setScarcity(true);
       console.log(`Selected size ${size.size}`);
@@ -34,37 +38,51 @@ const ShoeInventory = () => {
       setScarcity(false);
       console.log(`Selected size ${size.size}`);
     }
+    setClickedSize(size);
   };
 
   return (
     <div className={styles.buySection}>
+      {/* Sizes heading */}
       <div className={styles.headingContainer}>
         <div className={styles.heading}>Sizes</div>
       </div>
       <div className={styles.sizeSelector}>
-  {shoeInventory.map((shoe, index) => (
-    <React.Fragment key={shoe.size}>
-      <button
-  className={`${styles.sizeButton} ${selectedSize === shoe && shoe.quantity !== 0 ? styles.selectedSize : ''} ${shoe.quantity === 0 ? styles.outOfStock : ''}`}
-  onClick={() => handleSizeClick(shoe)}
->
-  {shoe.quantity === 0 && (
-    <>
-      {shoe.size}
-      <img className = {styles.notificationIcon} src="./public/img/notification.jpg" alt="notification" />
-     
-    </>
-  )}
-  {shoe.quantity !== 0 && shoe.size}
-</button>
+        {/* Render shoe buttons */}
+        {shoeInventory.map((shoe, index) => (
+          <React.Fragment key={shoe.size}>
+            <button
+              className={`${styles.sizeButton} ${
+                selectedSize === shoe && shoe.stock !== 0 ? styles.selectedSize : ""
+              } ${shoe.stock === 0 ? styles.outOfStock : ""} ${
+                clickedSize === shoe && shoe.stock !== 0 ? styles.clickedSize : ""
+              }`}
+              onClick={() => handleSizeClick(shoe)}
+            >
+              {shoe.stock === 0 && (
+                <>
+                  {shoe.size}
+                  <img
+                    className={styles.notificationIcon}
+                    src="./public/img/notification.jpg"
+                    alt="notification"
+                  />
+                </>
+              )}
+              {shoe.stock !== 0 && shoe.size}
+            </button>
+          </React.Fragment>
+        ))}
+      </div>
 
-    </React.Fragment>
-  ))}
-  
-</div>
-{scarcity && (
-      <div className={styles.scarcityMessage}>Don't miss out, last items available.</div>
-    )}
+      {/* Scarcity message */}
+      {scarcity && (
+        <div className={styles.scarcityMessage}>
+          Don't miss out, last items available.
+        </div>
+      )}
+
+      {/* Modal */}
       {showModal && (
         <div className="modal">
           <input
@@ -75,20 +93,27 @@ const ShoeInventory = () => {
           <button onClick={() => setShowModal(false)}>Close</button>
         </div>
       )}
-      <div className = {styles.sideControl}>
-        <img className = {styles.ruler} src = "./public/img/ruler.jpg"/>
-        <span className = {styles.sizeGuide}>Size guide</span>
+
+      {/* Side control */}
+      <div className={styles.sideControl}>
+        <img className={styles.ruler} src="./public/img/ruler.jpg" alt="ruler" />
+        <span className={styles.sizeGuide}>Size guide</span>
       </div>
-      <div className = {styles.fitGuidanceContainer}>
-        <div className = {styles.sizeAdvice}>
-          <img className= {styles.informationIcon} src = "./public/img/informationIcon.png"/>
-          <p className = {styles.sizeAlert}>
-            <span className = {styles.trueToSize}>True to size.</span>
-            <span className = {styles.sizeRecommendation}>
+
+      {/* Fit guidance */}
+      <div className={styles.fitGuidanceContainer}>
+        <div className={styles.sizeAdvice}>
+          <img
+            className={styles.informationIcon}
+            src="./public/img/informationIcon.png"
+            alt="information icon"
+          />
+          <p className={styles.sizeAlert}>
+            <span className={styles.trueToSize}>True to size.</span>
+            <span className={styles.sizeRecommendation}>
               We recommend ordering your usual size.
             </span>
-
-            </p>
+          </p>
         </div>
       </div>
     </div>

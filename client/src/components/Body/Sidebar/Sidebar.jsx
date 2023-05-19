@@ -142,6 +142,18 @@ export default function Sidebar() {
       <div>
         <ShoeInventory />
       </div>
+
+
+      <div id = {styles.AddToBag} tabindex = "-1" >
+        <button type = "button" className = {styles.AddToBag} title = "Add To Bag">
+            <span className = {styles.AddToBagTitle}>ADD TO BAG</span>
+            <img className = {styles.rtarrowicon} src = "./public/img/RTArrowIcon.png"/>
+        </button>
+        <div className = {styles.addWishListContainer}>
+          <img className = {styles.favoriteIcon} src = "./public/src/favoriteIcon.png"/>
+        </div>
+      </div>
+
     </div>
   );
 }
