@@ -3,3 +3,6 @@ GET http://localhost:3010
 
 ###
 GET http://localhost:3010/api/shoe_inventory
+
+###
+GET http://127.0.0.1:3500/productinfo/1
