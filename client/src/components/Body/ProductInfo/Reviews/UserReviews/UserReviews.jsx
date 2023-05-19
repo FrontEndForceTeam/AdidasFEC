@@ -1,15 +1,21 @@
+import { useState } from "react";
 import styles from "./UserReviews.module.css";
 
 export default function UserReviews(props) {
-  console.log(props.productInfo);
+  // console.log(props.productInfo);
+  const [displayed, setDisplayed] = useState(3);
+
+  const loadMore = () => {
+    setDisplayed(displayed + 3);
+  }
 
   return (
     <div>
       <button className={styles["sort-btn"]}>Sort by</button>
       <div className={styles["user-review-container"]}>
-        {props.productInfo.map((review) => (
-          <div className={styles["user-review"]}>
-          <h1 className={styles["header"]}>{review.title}</h1>
+        {props.productInfo.slice(0, displayed).map((review, index) => (
+          <div key={index} className={styles["user-review"]}>
+          <div className={styles["header"]}>{review.title}</div>
           <div className={styles["stars"]}>{review.stars} stars</div>
          <p>{review.body}</p>
           <div className={styles["info"]}>
@@ -27,25 +33,11 @@ export default function UserReviews(props) {
           </div>
           <p className={styles["report"]}>Report review</p>
         </div>
-  
         ))}
-
-
-
-        {/* <div className={styles["user-review"]}>
-           <h1 className={styles["header"]}>Fantasic</h1>
-           <div className={styles["stars"]}>★★★★★</div>
-          <p>Excellent 💥💥💥💥💥 Amazing 🤩 couldnt be happier</p>
-           <div className={styles["info"]}>
-             NRDon | May 14, 2023 | Verified Purchaser | Incentivised Review
-           </div>
-           <div className={styles["info"]}>
-             Colour: Cloud White / Cloud White / Cloud White | Size: 9
-           </div>
-           <p>Helpful?</p>
-           <p className={styles["report"]}>Report review</p>
-         </div> */}
       </div>
+      {displayed < props.productInfo.length && (
+        <button className={styles['load']} onClick={loadMore}>Read more reviews</button>
+      )}
     </div>
   );
 }

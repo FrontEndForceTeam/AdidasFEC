@@ -41,7 +41,13 @@
 }
 
 .thumb {
-    transform: scale(.4);
+    transform: scale(.3);
+    width: auto;
+    border: 1px solid white;
+}
+
+.thumb:hover {
+    border-color: black;
 }
 
 .helpful {
@@ -50,3 +56,8 @@
     align-items: center;
 }
 
+.load {
+    text-decoration: underline;
+    cursor: pointer;
+    transform: translateX(25px)
+}

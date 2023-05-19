@@ -10,34 +10,37 @@ import "swiper/css/pagination";
 
 import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper";
 
-export default function Style() {
+export default function Style(props) {
+  // console.log(props.style)
+
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
-  let data = [
-    {
-      image_url:
-        "https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%93%D0%BE%D0%BF%D0%BD%D0%B8%D0%BA.jpg",
-    },
-    {
-      image_url:
-        "https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%93%D0%BE%D0%BF%D0%BD%D0%B8%D0%BA.jpg",
-    },
-    {
-      image_url:
-        "https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%93%D0%BE%D0%BF%D0%BD%D0%B8%D0%BA.jpg",
-    },
-    {
-      image_url:
-        "https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%93%D0%BE%D0%BF%D0%BD%D0%B8%D0%BA.jpg",
-    },
-    {
-      image_url:
-        "https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%93%D0%BE%D0%BF%D0%BD%D0%B8%D0%BA.jpg",
-    },
-  ];
+  // let data = [
+  //   {
+  //     image_url:
+  //       "https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%93%D0%BE%D0%BF%D0%BD%D0%B8%D0%BA.jpg",
+  //   },
+  //   {
+  //     image_url:
+  //       "https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%93%D0%BE%D0%BF%D0%BD%D0%B8%D0%BA.jpg",
+  //   },
+  //   {
+  //     image_url:
+  //       "https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%93%D0%BE%D0%BF%D0%BD%D0%B8%D0%BA.jpg",
+  //   },
+  //   {
+  //     image_url:
+  //       "https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%93%D0%BE%D0%BF%D0%BD%D0%B8%D0%BA.jpg",
+  //   },
+  //   {
+  //     image_url:
+  //       "https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%93%D0%BE%D0%BF%D0%BD%D0%B8%D0%BA.jpg",
+  //   },
+  // ];
   return (
     <div>
       <div className={styles["style-container"]}>
+      <p className={styles['caption']}>Share a photo of your adidas favourite and appear in our showcase. Make sure to tag your image with @adidas.</p>
         <Swiper
           slidesPerView={3}
           centeredSlides={false}
@@ -51,17 +54,16 @@ export default function Style() {
           modules={[Keyboard, Scrollbar, Navigation, Pagination]}
           className={styles["swiper"]}
         >
-          {data &&
-            data.map((image) => {
-              return (
-                <SwiperSlide className="test">
-                  <CarouselElement
-                    className={styles["product-card"]}
-                    image={image.image_url}
-                  />
-                </SwiperSlide>
-              );
-            })}
+          {props.style.map((post) => {
+            return (
+              <SwiperSlide className="test">
+                <CarouselElement
+                  className={styles["product-card"]}
+                  {...post}
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
         <svg
           ref={navigationNextRef}
@@ -98,19 +100,16 @@ export default function Style() {
   );
 }
 
-function CarouselElement(props) {
+function CarouselElement(post) {
+  console.log(post);
   return (
+    <div className={styles['border']}>
     <div className={styles["product-card"]}>
-      <div
-        className={styles["card-top"]}
-        style={{ backgroundImage: `url(${props.image})` }}
-      >
-        <p className={styles["price"]}>$10</p>
-      </div>
-      <div className={styles["card-bottom"]}>
-        <h1>Cyka Blyat</h1>
-        <p className={styles["card-desc"]}>Originals</p>
-      </div>
+      <img className={styles['post-image']} src={post.image_url}/>
+      <p className={styles['user']}>
+        <img className={styles['icon']} src="./img/icons8-instagram.svg"/>
+        {post.user_name}</p>
+    </div>
     </div>
   );
 }

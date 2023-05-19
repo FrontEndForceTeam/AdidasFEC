@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 export default function ProductInfo() {
 
   const [productInfo, setProductInfo] = useState(null);
+  const [style, setStyle] = useState();
 
   useEffect(() => {
     fetch('http://127.0.0.1:3500/productinfo/1')
@@ -19,13 +20,23 @@ export default function ProductInfo() {
       });
   },[]);
 
+  useEffect(() => {
+    fetch('http://127.0.0.1:3500/productinfo/howtostyle/1')
+      .then((res) => res.json())
+      .then((data) => {
+        setStyle(data);
+        console.log(style)
+      });
+  },[]);
+  
+
   return (
     <div className={styles["product-info-container"]}>
       <AccordionButton
         title={
           <div className={styles["overall"]}>
             <button className={styles["toggle-btn"]}>
-              <div>Reviews (434)</div>
+              <div>Reviews</div>
               <div className={styles['rating']}>
                 <div>4.7</div>
                 <div className={styles['stars']}>★★★★★</div>
@@ -59,7 +70,7 @@ export default function ProductInfo() {
         title={<button className={styles["toggle-btn"]}>How to style</button>}
         content={
           <div className={styles['content']}>
-            <Style />
+            <Style style = {style}/>
           </div>
         }
       />
