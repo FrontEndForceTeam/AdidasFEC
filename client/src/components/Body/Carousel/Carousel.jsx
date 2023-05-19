@@ -48,6 +48,7 @@ export default function Carousel(props) {
                   <CarouselElement
                     className={styles["product-card"]}
                     image={image.image_url}
+                    product_title={image.product_title}
                   />
                 </SwiperSlide>
               );
@@ -86,7 +87,11 @@ function CarouselElement(props) {
         <p className={styles["price"]}>$10</p>
       </div>
       <div className={styles["card-bottom"]}>
-        <h1>Cyka Blyat</h1>
+        {props.product_title ? (
+          <h1>{props.product_title}</h1>
+        ) : (
+          <h1>Cyka Blyat</h1>
+        )}
         <p className={styles["card-desc"]}>Originals</p>
       </div>
     </div>
