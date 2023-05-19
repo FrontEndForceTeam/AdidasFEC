@@ -29,7 +29,7 @@ export default function Carousel(props) {
   const navigationNextRef = useRef(null);
   return (
     <>
-      <h1>{props.type}</h1>
+      <h1 className={styles["slider-header"]}>{props.type}</h1>
       <Swiper
         slidesPerView={4}
         centeredSlides={false}

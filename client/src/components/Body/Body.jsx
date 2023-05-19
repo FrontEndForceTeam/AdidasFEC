@@ -16,6 +16,7 @@ export default function Body(props) {
         <Carousel shoe={props.shoe} type="you may also like" />
         {/* others also bought */}
         <Carousel shoe={props.shoe} type="others also bought" />
+        <Carousel shoe={props.shoe} type="recently viewed items" />
       </div>
       <div id={styles["sidebar-container"]}>
         <Sidebar />

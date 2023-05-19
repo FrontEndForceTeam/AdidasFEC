@@ -87,10 +87,11 @@
   opacity: 1;
 }
 
-h1 {
+.slider-header {
   font-size: 2rem;
   align-self: flex-start;
-  padding-left: 25px;
+  padding-left: 85px;
   text-transform: uppercase;
   font-weight: 900;
+  font-family: var(--font-family-adihaus-bold);
 }
