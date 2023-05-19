@@ -6,3 +6,4 @@ GET http://localhost:3010/sidebar/1
 
 ###
 GET http://localhost:3010/productinfo/1
+
