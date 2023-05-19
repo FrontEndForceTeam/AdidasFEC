@@ -30,7 +30,8 @@ app.get("/imagecarousel/:id", async (req, res) => {
       `SELECT * FROM image WHERE product_id=$1
       AND element='you may also like'
       OR element='others also bought'
-      OR element='recently viewed items';`,
+      OR element='recently viewed items'
+      OR element = 'complete the look';`,
       [req.params.id]
     );
     res.status(200).send(response.rows);
