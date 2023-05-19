@@ -17,6 +17,7 @@ export default function Carousel(props) {
     let response = await fetch(apiURL);
     let data = await response.json();
     setImageArray(data);
+    console.log(data);
   };
   useEffect(() => {
     getAPI();
@@ -28,6 +29,7 @@ export default function Carousel(props) {
   const navigationNextRef = useRef(null);
   return (
     <>
+      <h1>{props.type}</h1>
       <Swiper
         slidesPerView={4}
         centeredSlides={false}
