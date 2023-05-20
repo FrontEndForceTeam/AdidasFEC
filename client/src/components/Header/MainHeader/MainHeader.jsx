@@ -1018,7 +1018,10 @@ export default function MainHeader() {
                         <div className={styles["column-title"]}>OUTDOOR</div>
                       </a>
                       <ul>
-                      <div className={styles['sport-picture-dave']} style={{ backgroundImage: 'url(./img/dave.png)' }}>
+                      {/* <div className={styles['sport-picture-dave']} style={{ backgroundImage: 'url(./img/dave.png)' }}>
+                          </div> */}
+                            <div className={styles['sport-picture']}>
+                          <img src="./img/OUTDOOR_IMAGE_tcm143-925998.webp" alt="" />
                           </div>
                         <li>
                           <a href="#">Shoes</a>
@@ -1419,7 +1422,10 @@ export default function MainHeader() {
                         <div className={styles["column-title"]}>ONLY AT ADIDAS</div>
                       </a>
                       <ul>
-                      <div className={styles['sport-picture-dave-collection']} style={{ backgroundImage: 'url(./img/dave2.png)' }}>
+                      {/* <div className={styles['sport-picture-dave-collection']} style={{ backgroundImage: 'url(./img/dave2.png)' }}>
+                          </div> */}
+                             <div className={styles['sport-picture-golf-collection']}>
+                          <img src="./img/Only_at_adidas_header_image_tcm143-884788.jpeg" alt="" />
                           </div>
                         <li>
                           <a href="#">Member Exclusives</a>
