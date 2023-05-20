@@ -16,7 +16,7 @@ const ShoeInventory = () => {
 
   const fetchShoeInventory = async () => {
     try {
-      const response = await fetch("http://localhost:3010/sidebar/1");
+      const response = await fetch("http://localhost:3500/sidebar/1");
       const data = await response.json();
       setShoeInventory(data);
       console.log(data);
