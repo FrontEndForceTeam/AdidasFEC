@@ -8,7 +8,7 @@ export default function Reviews(props) {
   return (
     <div className={styles["reviews-container"]}>
       <div className={styles["item-overview-container"]}>
-        <ItemOverview />
+        <ItemOverview {...props}/>
       </div>
       <div className={styles["user-reviews-container"]}>
         <UserReviews {...props}/>

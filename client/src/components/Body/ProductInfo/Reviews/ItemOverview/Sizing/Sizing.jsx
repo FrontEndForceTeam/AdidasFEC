@@ -4,7 +4,7 @@ export default function Sizing() {
   return (
     <div className={styles["sizing-container"]}>
       <div className={styles["size"]}>
-        <h1 className={styles["header"]}>Size</h1>
+        <div className={styles["header"]}>Size</div>
         <div className={styles["bar"]}>
           <div className={styles["triangle"]}></div>
         </div>
@@ -15,7 +15,7 @@ export default function Sizing() {
         </div>
       </div>
       <div className={styles["width"]}></div>
-      <h1 className={styles["header"]}>Width</h1>
+      <div className={styles["header"]}>Width</div>
       <div className={styles["bar"]}>
         <div className={styles["triangle"]}></div>
       </div>

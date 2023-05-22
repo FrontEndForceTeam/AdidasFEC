@@ -11,6 +11,12 @@
 }
 
 .style-container {
+  
+}
+
+.caption {
+  font-size: 50%;
+  text-align: center;
 }
 
 .next {
@@ -45,14 +51,15 @@
   opacity: 1;
 }
 .swiper {
-  width: 80rem;
-  height: 280px;
+  width: 50rem;
+  height: 400px;
   display: flex;
   flex-direction: column;
   margin: 15px;
   background-color: white;
   display: flex;
   justify-content: center;
+  margin-left: 60px;
 }
 
 .swiper-slide {
@@ -62,4 +69,30 @@
   flex-grow: 1;
   justify-content: center;
   position: relative;
+}
+
+.product-card {
+  width: 245px;
+  height: 250px;
+  font-size: 60%;
+}
+
+.border {
+  border: 1px solid #eceff1;
+  height: 325px;
+  margin: 10px;
+}
+.border:hover{
+  border-color: #767677;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  width: 30px;
+  transform: scale(.6);
 }

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import styles from "./AccordionButton.module.css";
 
 const AccordionButton = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,10 +9,8 @@ const AccordionButton = ({ title, content }) => {
   };
 
   return (
-    <div>
-      <button onClick={handleClick}>
-        {title} 
-      </button>
+    <div className={styles["content"]}>
+      <button onClick={handleClick}>{title}</button>
       {isOpen && <div>{content}</div>}
     </div>
   );
