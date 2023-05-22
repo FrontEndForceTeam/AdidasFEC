@@ -11,7 +11,7 @@
   flex-grow: 1;
 }
 #sidebar-container {
-  width: 520px;
+  width: 450px;
   position: sticky;
   top: 10%;
   bottom: 10%;

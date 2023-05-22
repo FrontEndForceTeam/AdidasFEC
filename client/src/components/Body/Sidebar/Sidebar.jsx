@@ -3,15 +3,19 @@ import React, { useState } from "react";
 import ShoeInventory from './ShoeInventory';
 
 export default function Sidebar() {
+  // State variables
   const [leftFootText, setLeftFootText] = useState("");
   const [leftFootLetters, setLeftFootLetters] = useState(0);
   const [rightFootText, setRightFootText] = useState("");
   const [rightFootLetters, setRightFootLetters] = useState(0);
   const [increasePrice, setIncreasePrice] = useState(0);
+
+  // Constants
   const maxLetters = 10;
   let price = 84.50;
   let embellish = 7.50;
 
+  // Event handler for left foot text input
   const handleLeftFootChange = (event) => {
     const input = event.target.value;
     const inputLength = input.length;
@@ -28,6 +32,7 @@ export default function Sidebar() {
     }
   };
 
+  // Event handler for right foot text input
   const handleRightFootChange = (event) => {
     const input = event.target.value;
     const inputLength = input.length;
@@ -44,6 +49,7 @@ export default function Sidebar() {
     }
   };
 
+  // Event handler to clear all foot text
   const handleClearAll = () => {
     setLeftFootText("");
     setLeftFootLetters(0);
@@ -53,16 +59,20 @@ export default function Sidebar() {
 
   return (
     <div className={styles["sidebar-container"]}>
-      
+
       {/* Sidebar Description */}
       <div className={styles.description}>
         <div className={styles.preHeader}>
           <div className={styles.productCategory}>
             <span>Originals</span>
           </div>
-          <button className={styles.reviewCount} link=".ProductInfo/reviews">
-            * * * * * 434
+          <div>
+          <button className={styles.reviewCount} >
+          <span>★ ★ ★ ★ ★</span>
+          <span className= {styles.reviews}>434</span>
+          
           </button>
+          </div>
         </div>
         <h1 className={styles.productTitle}>
           <span>ZX 5K BOOST SHOES</span>
@@ -139,22 +149,47 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div>
+    {/* Sizing */}
+        <div>
         <ShoeInventory />
       </div>
 
-{/* Add To Bag */}
-      <div id = {styles.AddToBag} tabindex = "-1" >
-        <button type = "button" className = {styles.AddToBag} title = "Add To Bag">
-            <span className = {styles.AddToBagTitle}>ADD TO BAG</span>
-            <img className = {styles.rtarrowicon} src = "./public/img/RTArrowIcon.png"/>
+      {/* Add To Bag */}
+      <div id={styles.AddToBag} tabIndex="-1">
+        <button type="button" className={styles.AddToBag} title="Add To Bag">
+          <span className={styles.AddToBagTitle}>ADD TO BAG</span>
+          <img className={styles.rtarrowicon} src="./public/img/arrow-right-svgrepo-com.svg" alt="Right Arrow Icon" />
         </button>
-        <div className = {styles.addWishListContainer}>
-          <div className = {styles.favContainer}>
-          <img className = {styles.favoriteIcon} src = "./public/src/favoriteIcon.png"/>
-        </div>
+        <div className={styles.addWishListContainer}>
+          <div className={styles.favContainer}>
+            <img className={styles.favoriteIcon} src="./public/img/heart-icon.svg" alt="Favorite Icon" />
+          </div>
         </div>
       </div>
+
+      <div className = {styles.PayPalMessage} >
+        <a href= "https://www.paypal.com/us/digital-wallet/ways-to-pay/buy-now-pay-later" className = {styles.paypal}>
+          <p className = {styles.ppDescription}>
+            Pay in 3 interest-free payments on purchases from £30-£2,000 with 
+            <img className = {styles.PayPallogo} src = "public/img/PayPalIcon.png"/>
+            <span className = {styles.learn}> Learn more</span>
+          </p>
+        </a>
+      </div>
+
+      <div className = {styles.bottom}>
+        <div className = {styles.delivery}>
+          <img src = "./public/img/Delivery.png" className = {styles.deliveryPic}/>
+          <span className = {styles.adiClub}>Free delivery for adiClub members.</span>
+        </div>
+
+        <div className = {styles.delvierypromotion}>
+          <img src = "./public/img/FreeDel.png" className = {styles.freeDel}/>
+          <span className = {styles.freeDel}>Free delivery to our adidas Store.</span>
+        </div>
+      </div>
+
+
 
     </div>
   );
