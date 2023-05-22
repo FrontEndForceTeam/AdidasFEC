@@ -253,9 +253,11 @@ export default function MainHeader() {
               </div>
             )}
           </li>
-          <li className={styles["categories"]}
+          <li
+            className={styles["categories"]}
             onMouseEnter={() => handleMouseEnter("WOMEN")}
-            onMouseLeave={handleMouseLeave}>
+            onMouseLeave={handleMouseLeave}
+          >
             <a href="#">WOMEN</a>
             {hoveredItem === "WOMEN" && (
               <div className={styles["submenu-container-women"]}>
@@ -498,8 +500,11 @@ export default function MainHeader() {
               </div>
             )}
           </li>
-          <li className={styles["categories"]} onMouseEnter={() => handleMouseEnter("KIDS")}
-            onMouseLeave={handleMouseLeave}>
+          <li
+            className={styles["categories"]}
+            onMouseEnter={() => handleMouseEnter("KIDS")}
+            onMouseLeave={handleMouseLeave}
+          >
             <a href="#">KIDS</a>
             {hoveredItem === "KIDS" && (
               <div className={styles["submenu-container-kids"]}>
@@ -559,7 +564,9 @@ export default function MainHeader() {
                         </li>
                       </ul>
                       <a href="#">
-                        <div className={styles["column-title"]}>GIRLS SHOES</div>
+                        <div className={styles["column-title"]}>
+                          GIRLS SHOES
+                        </div>
                       </a>
                       <ul>
                         <li>
@@ -583,7 +590,9 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>BOYS CLOTHING</div>
+                        <div className={styles["column-title"]}>
+                          BOYS CLOTHING
+                        </div>
                       </a>
                       <ul>
                         <li>
@@ -615,7 +624,9 @@ export default function MainHeader() {
                         </li>
                       </ul>
                       <a href="#">
-                        <div className={styles["column-title"]}>GIRLS CLOTHING</div>
+                        <div className={styles["column-title"]}>
+                          GIRLS CLOTHING
+                        </div>
                       </a>
                       <ul>
                         <li>
@@ -734,7 +745,9 @@ export default function MainHeader() {
                         </li>
                       </ul>
                       <a href="#">
-                        <div className={styles["column-title"]}>COLLECTIONS</div>
+                        <div className={styles["column-title"]}>
+                          COLLECTIONS
+                        </div>
                       </a>
                       <ul>
                         <li>
@@ -755,8 +768,7 @@ export default function MainHeader() {
                       </ul>
                     </div>
                   </li>
-                  <li>
-                  </li>
+                  <li></li>
                 </ul>
                 <ul className={styles["bottom-links-kids"]}>
                   <li>
@@ -778,8 +790,11 @@ export default function MainHeader() {
               </div>
             )}
           </li>
-          <li className={styles["categories"]} onMouseEnter={() => handleMouseEnter("NEW")}
-            onMouseLeave={handleMouseLeave}>
+          <li
+            className={styles["categories"]}
+            onMouseEnter={() => handleMouseEnter("NEW")}
+            onMouseLeave={handleMouseLeave}
+          >
             <a href="#">NEW</a>
             {hoveredItem === "NEW" && (
               <div className={styles["submenu-container-new"]}>
@@ -807,7 +822,9 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>NEW FOR WOMEN</div>
+                        <div className={styles["column-title"]}>
+                          NEW FOR WOMEN
+                        </div>
                       </a>
                       <ul>
                         <li>
@@ -825,7 +842,9 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>NEW FOR KIDS</div>
+                        <div className={styles["column-title"]}>
+                          NEW FOR KIDS
+                        </div>
                       </a>
                       <ul>
                         <li>
@@ -881,7 +900,9 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>COLLECTIONS</div>
+                        <div className={styles["column-title"]}>
+                          COLLECTIONS
+                        </div>
                       </a>
                       <ul>
                         <li>
@@ -920,8 +941,11 @@ export default function MainHeader() {
               </div>
             )}
           </li>
-          <li className={styles["categories"]} onMouseEnter={() => handleMouseEnter("SPORTS")}
-            onMouseLeave={handleMouseLeave}>
+          <li
+            className={styles["categories"]}
+            onMouseEnter={() => handleMouseEnter("SPORTS")}
+            onMouseLeave={handleMouseLeave}
+          >
             <a href="#">SPORTS</a>
             {hoveredItem === "SPORTS" && (
               <div className={styles["submenu-container-sports"]}>
@@ -929,14 +953,15 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>
-                         FOOTBALL
-                        </div>
+                        <div className={styles["column-title"]}>FOOTBALL</div>
                       </a>
                       <ul>
-                          <div className={styles['sport-picture']}>
-                          <img src="./img/football-ss23-heatspawn-app-shop-banner_tcm143-1014705.webp" alt="" />
-                          </div>
+                        <div className={styles["sport-picture"]}>
+                          <img
+                            src="./img/football-ss23-heatspawn-app-shop-banner_tcm143-1014705.webp"
+                            alt=""
+                          />
+                        </div>
                         <li>
                           <a href="#">Boots</a>
                         </li>
@@ -953,19 +978,19 @@ export default function MainHeader() {
                           <div className={styles.separator}></div>
                         </li>
                         <li>
-                        <a href="#">All Clothing</a>
+                          <a href="#">All Clothing</a>
                         </li>
                         <li>
-                        <a href="#">All Accessories</a>
+                          <a href="#">All Accessories</a>
                         </li>
                         <li>
-                        <a href="#">Predator</a>
+                          <a href="#">Predator</a>
                         </li>
                         <li>
-                        <a href="#">X</a>
+                          <a href="#">X</a>
                         </li>
                         <li>
-                        <a href="#">Copa</a>
+                          <a href="#">Copa</a>
                         </li>
                       </ul>
                     </div>
@@ -976,9 +1001,12 @@ export default function MainHeader() {
                         <div className={styles["column-title"]}>RUNNING</div>
                       </a>
                       <ul>
-                         <div className={styles['sport-picture-running']}>
-                          <img src="./img/sports-running-2019-new-ui_tcm143-670244.webp" alt="" />
-                          </div>
+                        <div className={styles["sport-picture-running"]}>
+                          <img
+                            src="./img/sports-running-2019-new-ui_tcm143-670244.webp"
+                            alt=""
+                          />
+                        </div>
                         <li>
                           <a href="#">Shoes</a>
                         </li>
@@ -995,19 +1023,19 @@ export default function MainHeader() {
                           <a href="#">Everyday running shoes</a>
                         </li>
                         <li>
-                        <a href="#">For beginners</a>
+                          <a href="#">For beginners</a>
                         </li>
                         <li>
-                        <a href="#">Racing & race preparation</a>
+                          <a href="#">Racing & race preparation</a>
                         </li>
                         <li>
-                        <a href="#">Long distance running shoes</a>
+                          <a href="#">Long distance running shoes</a>
                         </li>
                         <li>
-                        <a href="#">adidas Runners</a>
+                          <a href="#">adidas Runners</a>
                         </li>
                         <li>
-                        <a href="#">Running shoe guide</a>
+                          <a href="#">Running shoe guide</a>
                         </li>
                       </ul>
                     </div>
@@ -1018,8 +1046,10 @@ export default function MainHeader() {
                         <div className={styles["column-title"]}>OUTDOOR</div>
                       </a>
                       <ul>
-                      <div className={styles['sport-picture-dave']} style={{ backgroundImage: 'url(./img/dave.png)' }}>
-                          </div>
+                        <div
+                          className={styles["sport-picture-dave"]}
+                          style={{ backgroundImage: "url(./img/dave.png)" }}
+                        ></div>
                         <li>
                           <a href="#">Shoes</a>
                         </li>
@@ -1036,19 +1066,19 @@ export default function MainHeader() {
                           <a href="#">Hiking</a>
                         </li>
                         <li>
-                        <a href="#">Hiking boots</a>
+                          <a href="#">Hiking boots</a>
                         </li>
                         <li>
-                        <a href="#">Mountain Biking</a>
+                          <a href="#">Mountain Biking</a>
                         </li>
                         <li>
-                        <a href="#">Climbing</a>
+                          <a href="#">Climbing</a>
                         </li>
                         <li>
-                        <a href="#">Mountaineering</a>
+                          <a href="#">Mountaineering</a>
                         </li>
                         <li>
-                        <a href="#">Winter Sports</a>
+                          <a href="#">Winter Sports</a>
                         </li>
                       </ul>
                     </div>
@@ -1061,9 +1091,12 @@ export default function MainHeader() {
                         </div>
                       </a>
                       <ul>
-                      <div className={styles['sport-picture-running']}>
-                          <img src="./img/3178091_Performance_Onsites_Training_HIIT_SS23_Navigation_Header_Image_tcm143-1012445.webp" alt="" />
-                          </div>
+                        <div className={styles["sport-picture-running"]}>
+                          <img
+                            src="./img/3178091_Performance_Onsites_Training_HIIT_SS23_Navigation_Header_Image_tcm143-1012445.webp"
+                            alt=""
+                          />
+                        </div>
                         <li>
                           <a href="#">Shoes</a>
                         </li>
@@ -1080,16 +1113,16 @@ export default function MainHeader() {
                           <a href="#">HIIT</a>
                         </li>
                         <li>
-                        <a href="#">Strength training</a>
+                          <a href="#">Strength training</a>
                         </li>
                         <li>
-                        <a href="#">Yoga & Studio</a>
+                          <a href="#">Yoga & Studio</a>
                         </li>
                         <li>
-                        <a href="#">TECHFIT</a>
+                          <a href="#">TECHFIT</a>
                         </li>
                         <li>
-                        <a href="#">Sports Bra Guide</a>
+                          <a href="#">Sports Bra Guide</a>
                         </li>
                       </ul>
                     </div>
@@ -1100,9 +1133,12 @@ export default function MainHeader() {
                         <div className={styles["column-title"]}>GOLF</div>
                       </a>
                       <ul>
-                      <div className={styles['sport-picture-golf']}>
-                          <img src="./img/golf-SS23-Ultimate365tour-global-launch-clp-masthead-d_tcm143-1013775.jpg" alt="" />
-                          </div>
+                        <div className={styles["sport-picture-golf"]}>
+                          <img
+                            src="./img/golf-SS23-Ultimate365tour-global-launch-clp-masthead-d_tcm143-1013775.jpg"
+                            alt=""
+                          />
+                        </div>
                         <li>
                           <a href="#">Shoes</a>
                         </li>
@@ -1119,7 +1155,7 @@ export default function MainHeader() {
                           <a href="#">adicross</a>
                         </li>
                         <li>
-                        <a href="#">Codechaos</a>
+                          <a href="#">Codechaos</a>
                         </li>
                       </ul>
                     </div>
@@ -1127,7 +1163,9 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>OTHER SPORTS</div>
+                        <div className={styles["column-title"]}>
+                          OTHER SPORTS
+                        </div>
                       </a>
                       <ul>
                         <li>
@@ -1196,8 +1234,11 @@ export default function MainHeader() {
               </div>
             )}
           </li>
-          <li className={styles["categories"]} onMouseEnter={() => handleMouseEnter("COLLECTIONS")}
-            onMouseLeave={handleMouseLeave}>
+          <li
+            className={styles["categories"]}
+            onMouseEnter={() => handleMouseEnter("COLLECTIONS")}
+            onMouseLeave={handleMouseLeave}
+          >
             <a href="#">COLLECTIONS</a>
             {hoveredItem === "COLLECTIONS" && (
               <div className={styles["submenu-container-collections"]}>
@@ -1206,13 +1247,18 @@ export default function MainHeader() {
                     <div className={styles["_column"]}>
                       <a href="#">
                         <div className={styles["column-title"]}>
-                         TRENDING NOW
+                          TRENDING NOW
                         </div>
                       </a>
                       <ul>
-                          <div className={styles['sport-picture-running-collection']}>
-                          <img src="./img/collections-trending-image-new-ui_tcm143-670452.webp" alt="" />
-                          </div>
+                        <div
+                          className={styles["sport-picture-running-collection"]}
+                        >
+                          <img
+                            src="./img/collections-trending-image-new-ui_tcm143-670452.webp"
+                            alt=""
+                          />
+                        </div>
                         <li>
                           <a href="#">adidas Blog</a>
                         </li>
@@ -1252,9 +1298,14 @@ export default function MainHeader() {
                         <div className={styles["column-title"]}>RUNNING</div>
                       </a>
                       <ul>
-                         <div className={styles['sport-picture-running-collection']}>
-                          <img src="./img/collections-running-image-new-ui_tcm143-670450.webp" alt="" />
-                          </div>
+                        <div
+                          className={styles["sport-picture-running-collection"]}
+                        >
+                          <img
+                            src="./img/collections-running-image-new-ui_tcm143-670450.webp"
+                            alt=""
+                          />
+                        </div>
                         <li>
                           <a href="#">Running Trainers</a>
                         </li>
@@ -1284,7 +1335,7 @@ export default function MainHeader() {
                         </li>
                         <li>
                           <a href="#">Running Socks</a>
-                        </li> 
+                        </li>
                       </ul>
                     </div>
                   </li>
@@ -1294,9 +1345,14 @@ export default function MainHeader() {
                         <div className={styles["column-title"]}>FOOTBALL</div>
                       </a>
                       <ul>
-                      <div className={styles['sport-picture-running-collection']}>
-                          <img src="./img/2226727-CAM_Dotcom_GlobalAdapt_EU_FWC_OMB_SS22_172x80_tcm143-874255.jpg" alt="" />
-                          </div>
+                        <div
+                          className={styles["sport-picture-running-collection"]}
+                        >
+                          <img
+                            src="./img/2226727-CAM_Dotcom_GlobalAdapt_EU_FWC_OMB_SS22_172x80_tcm143-874255.jpg"
+                            alt=""
+                          />
+                        </div>
                         <li>
                           <a href="#">Firm Ground Football Boots</a>
                         </li>
@@ -1330,14 +1386,17 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>
-                          CLOTHING
-                        </div>
+                        <div className={styles["column-title"]}>CLOTHING</div>
                       </a>
                       <ul>
-                      <div className={styles['sport-picture-running-collection']}>
-                          <img src="./img/collections-clothing-image-new-ui_tcm143-670446.webp" alt="" />
-                          </div>
+                        <div
+                          className={styles["sport-picture-running-collection"]}
+                        >
+                          <img
+                            src="./img/collections-clothing-image-new-ui_tcm143-670446.webp"
+                            alt=""
+                          />
+                        </div>
                         <li>
                           <a href="#">Sweatshirts</a>
                         </li>
@@ -1374,9 +1433,14 @@ export default function MainHeader() {
                         <div className={styles["column-title"]}>OUTDOOR</div>
                       </a>
                       <ul>
-                      <div className={styles['sport-picture-golf-collection']}>
-                          <img src="./img/OUTDOOR_IMAGE_tcm143-925998.webp" alt="" />
-                          </div>
+                        <div
+                          className={styles["sport-picture-golf-collection"]}
+                        >
+                          <img
+                            src="./img/OUTDOOR_IMAGE_tcm143-925998.webp"
+                            alt=""
+                          />
+                        </div>
                         <li>
                           <a href="#">Terrex Agravic</a>
                         </li>
@@ -1416,11 +1480,15 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>ONLY AT ADIDAS</div>
+                        <div className={styles["column-title"]}>
+                          ONLY AT ADIDAS
+                        </div>
                       </a>
                       <ul>
-                      <div className={styles['sport-picture-dave-collection']} style={{ backgroundImage: 'url(./img/dave2.png)' }}>
-                          </div>
+                        <div
+                          className={styles["sport-picture-dave-collection"]}
+                          style={{ backgroundImage: "url(./img/dave2.png)" }}
+                        ></div>
                         <li>
                           <a href="#">Member Exclusives</a>
                         </li>
@@ -1458,8 +1526,11 @@ export default function MainHeader() {
               </div>
             )}
           </li>
-          <li className={styles["categories"]} onMouseEnter={() => handleMouseEnter("OUTLET")}
-            onMouseLeave={handleMouseLeave}>
+          <li
+            className={styles["categories"]}
+            onMouseEnter={() => handleMouseEnter("OUTLET")}
+            onMouseLeave={handleMouseLeave}
+          >
             <a href="#">OUTLET</a>
             {hoveredItem === "OUTLET" && (
               <div className={styles["submenu-container-outlet"]}>
@@ -1467,9 +1538,7 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>
-                          MEN
-                        </div>
+                        <div className={styles["column-title"]}>MEN</div>
                       </a>
                       <ul>
                         <li>
@@ -1607,9 +1676,7 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>
-                          SPORTS
-                        </div>
+                        <div className={styles["column-title"]}>SPORTS</div>
                       </a>
                       <ul>
                         <li>
@@ -1645,7 +1712,9 @@ export default function MainHeader() {
                   <li>
                     <div className={styles["_column"]}>
                       <a href="#">
-                        <div className={styles["column-title"]}>COLLECTIONS</div>
+                        <div className={styles["column-title"]}>
+                          COLLECTIONS
+                        </div>
                       </a>
                       <ul>
                         <li>
@@ -1669,8 +1738,7 @@ export default function MainHeader() {
                       </ul>
                     </div>
                   </li>
-                  <li>
-                  </li>
+                  <li></li>
                 </ul>
               </div>
             )}
@@ -1715,4 +1783,3 @@ export default function MainHeader() {
     </header>
   );
 }
-
