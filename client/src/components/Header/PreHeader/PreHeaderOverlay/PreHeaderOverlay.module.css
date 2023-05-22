@@ -22,7 +22,7 @@
 }
 
 .close-btn-box {
-    border: 2px solid black;
+    border: 1px solid black;
     height: 50px;
     width: 50px;
     display: flex;
@@ -34,3 +34,47 @@
     color: black;
     transform: scale(4);
 }
+
+.panel-para-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    margin-bottom: 100px;
+}
+
+.para-one-contaner, .para-two-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 80px;
+    width: 400px;
+    height: 150px;
+}
+
+.title-one, .title-two {
+    font-size: 1rem;
+    font-family: var(--font-family-adihaus-bold);
+    line-height: 1.25;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.content-container-one, .content-container-two {
+    margin-bottom: 15px;
+}
+
+h5 {
+    margin-bottom: 20px;
+}
+
+.para-one-contaner a, .para-two-container a{
+    font-family: var(--font-family-adihaus-bold);
+    font-size: 13px;
+    line-height: 1.3;
+    letter-spacing: .10rem;
+    border-bottom: 1px solid black;
+}
+
