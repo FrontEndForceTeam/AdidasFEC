@@ -169,6 +169,7 @@ function ShoePicker(props) {
 }
 
 function ShoeSelection(props) {
+  console.log(props)
   return (
     <div
       className={styles["shoe-selection-element"]}

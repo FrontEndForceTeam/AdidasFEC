@@ -1046,10 +1046,14 @@ export default function MainHeader() {
                         <div className={styles["column-title"]}>OUTDOOR</div>
                       </a>
                       <ul>
-                        <div
-                          className={styles["sport-picture-dave"]}
-                          style={{ backgroundImage: "url(./img/dave.png)" }}
-                        ></div>
+                        {/* <div className={styles['sport-picture-dave']} style={{ backgroundImage: 'url(./img/dave.png)' }}>
+                          </div> */}
+                        <div className={styles["sport-picture"]}>
+                          <img
+                            src="./img/OUTDOOR_IMAGE_tcm143-925998.webp"
+                            alt=""
+                          />
+                        </div>
                         <li>
                           <a href="#">Shoes</a>
                         </li>
